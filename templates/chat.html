@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+</head>
+<body>
+    <h1>Welcome to the Entertainment Recommender Bot!</h1>
+    <form method="POST">
+        <label for="user_input">Type your message:</label><br>
+        <input type="text" id="user_input" name="user_input" required>
+        <button type="submit">Send</button>
+    </form>
+
+    {% if bot_reply %}
+        <h3>Bot:</h3>
+        <p>{{ bot_reply }}</p>
+    {% endif %}
+</body>
+</html>
