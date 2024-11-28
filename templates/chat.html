@@ -4,22 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entertainment Recommender Bot</title>
+    <style>
+        .chat-container {
+            width: 60%;
+            margin: auto;
+            font-family: Arial, sans-serif;
+        }
+        .chat-bubble {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+        .user {
+            background-color: #d1e7dd;
+            align-self: flex-end;
+        }
+        .bot {
+            background-color: #f8d7da;
+            align-self: flex-start;
+        }
+        .audio {
+            margin-top: 5px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Chat with the Entertainment Bot</h1>
-    <form method="POST">
-        <input type="text" name="user_input" placeholder="Ask me anything..." required>
-        <button type="submit">Send</button>
-    </form>
+    <div class="chat-container">
+        <h1>Chat with the Entertainment Bot</h1>
 
-    {% if bot_reply %}
+        <!-- Chat history -->
         <div>
-            <p><strong>Bot:</strong> {{ bot_reply }}</p>
-            <audio controls>
-                <source src="{{ url_for('serve_audio', filename=audio_filename) }}" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
+            {% for chat in chat_history %}
+                <div class="chat-bubble user">
+                    <p><strong>You:</strong> {{ chat.user }}</p>
+                </div>
+                <div class="chat-bubble bot">
+                    <p><strong>Bot:</strong> {{ chat.bot }}</p>
+                    <audio class="audio" controls>
+                        <source src="{{ url_for('serve_audio', filename=chat.audio) }}" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            {% endfor %}
         </div>
-    {% endif %}
+
+        <!-- Input form -->
+        <form method="POST">
+            <input type="text" name="user_input" placeholder="Ask me anything..." required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
 </body>
 </html>
