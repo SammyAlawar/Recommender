@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot</title>
+    <title>Entertainment Recommender Bot</title>
 </head>
 <body>
-    <h1>Welcome to the Entertainment Recommender Bot!</h1>
+    <h1>Chat with the Entertainment Bot</h1>
     <form method="POST">
-        <label for="user_input">Type your message:</label><br>
-        <input type="text" id="user_input" name="user_input" required>
+        <input type="text" name="user_input" placeholder="Ask me anything..." required>
         <button type="submit">Send</button>
     </form>
 
     {% if bot_reply %}
-        <h3>Bot:</h3>
-        <p>{{ bot_reply }}</p>
+        <div>
+            <p><strong>Bot:</strong> {{ bot_reply }}</p>
+            <audio controls>
+                <source src="{{ url_for('serve_audio', filename=audio_filename) }}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
     {% endif %}
 </body>
 </html>
