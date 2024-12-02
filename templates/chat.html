@@ -4,28 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entertainment Recommender Bot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        .chat-container {
-            width: 60%;
-            margin: auto;
-            font-family: Arial, sans-serif;
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
+
+        .chat-container {
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #6200ea;
+            color: #ffffff;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
         .chat-bubble {
             margin: 10px 0;
-            padding: 10px;
-            border-radius: 10px;
-            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 15px;
+            max-width: 75%;
+            line-height: 1.6;
+            word-wrap: break-word;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
         }
+
         .user {
-            background-color: #d1e7dd;
             align-self: flex-end;
+            background-color: #6200ea;
+            color: white;
         }
+
         .bot {
-            background-color: #f8d7da;
             align-self: flex-start;
+            background-color: #e8eaf6;
+            color: #333333;
         }
+
         .audio {
-            margin-top: 5px;
+            margin-top: 10px;
+        }
+
+        #recordButton, #stopButton, #sendButton {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        #recordButton {
+            background-color: #6200ea;
+            color: white;
+        }
+
+        #recordButton:hover {
+            background-color: #7e33e8;
+        }
+
+        #sendButton {
+            background-color: #03a9f4;
+            color: white;
+        }
+
+        #sendButton:hover {
+            background-color: #0288d1;
+        }
+
+        form {
+            display: flex;
+            margin-top: 15px;
+        }
+
+        form input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        form button {
+            background-color: #6200ea;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        form button:hover {
+            background-color: #7e33e8;
+        }
+
+        audio {
+            width: 100%;
+            outline: none;
         }
     </style>
 </head>
@@ -55,5 +152,6 @@
             <button type="submit">Send</button>
         </form>
     </div>
+    
 </body>
 </html>
