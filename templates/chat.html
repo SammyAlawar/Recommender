@@ -8,7 +8,10 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f4f4f9;
+            background-image: url('/static/popcorn-7025931_1920.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Ensures the image stays in place */
             margin: 0;
             padding: 0;
             display: flex;
@@ -21,7 +24,7 @@
             width: 90%;
             max-width: 800px;
             margin: auto;
-            background: #ffffff;
+            background: hsla(0, 0%, 62%, 0.839);
             border-radius: 15px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             overflow: hidden;
@@ -31,19 +34,23 @@
         }
 
         .header {
-            background-color: #6200ea;
+            background: linear-gradient(to right, #ff414d, #ffb400); /* Vibrant gradient */
             color: #ffffff;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #ffb400;
         }
+
 
         .chat-bubble {
             margin: 10px 0;
             padding: 10px 15px;
             border-radius: 15px;
-            max-width: 75%;
+            max-width: 100%;
             line-height: 1.6;
             word-wrap: break-word;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
@@ -51,14 +58,21 @@
 
         .user {
             align-self: flex-end;
-            background-color: #6200ea;
+            max-width: 50%;
+            background-color: #ff414d;
             color: white;
+            position: relative; /* Enable positioning */
+            left: 370px; /* Adjust position from the right */
+            resize: none;
+            margin-top: 10px;
         }
 
         .bot {
             align-self: flex-start;
-            background-color: #e8eaf6;
-            color: #333333;
+            background-color: #767676;
+            color: #ffffff;
+            max-width: 100%;
+            right: 1;
         }
 
         .loading {
@@ -76,7 +90,7 @@
             width: 8px;
             height: 8px;
             margin: 0 2px;
-            background-color: #6200ea;
+            background-color: #ffffff;
             border-radius: 50%;
             animation: blink 1.5s infinite ease-in-out;
         }
@@ -112,37 +126,74 @@
         }
 
         form button {
-            background-color: #6200ea;
-            color: white;
+            background-color: #ff414d; /* Bright red */
+            color: #ffffff;
             border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 8px;
             cursor: pointer;
-            margin-left: 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
         form button:hover {
-            background-color: #7e33e8;
+            background-color: #ffb400; /* Golden yellow */
+            transform: scale(1.05);
         }
+
 
         audio {
             width: 100%;
             outline: none;
+            color: #ffffff;
         }
+        .footer {
+            position: fixed; /* Keeps it in place */
+            bottom: 0; /* Anchors it to the bottom of the page */
+            left: 0;
+            right: 1;
+            width: 0%; /* Stretches it across the screen */
+            background-color: transparent; /* Matches your theme */
+            color: #972525;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        
+
+        .github-link {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .github-logo {
+            width: 60px;
+            height: 60px;
+            filter: invert(1); /* Makes the logo white to match a dark background */
+            transition: transform 0.3s ease;
+        }
+
+        .github-logo:hover {
+            transform: scale(1.1); /* Slight zoom-in effect on hover */
+        }
+
+
     </style>
 </head>
 <body>
     <div class="chat-container">
-        <h1>Chat with the Entertainment Bot</h1>
+        <h1>Entertainment Recommendation Bot</h1>
 
         <!-- Chat history -->
         <div id="chat-history">
             {% for chat in chat_history %}
                 <div class="chat-bubble user">
-                    <p><strong>You:</strong> {{ chat.user }}</p>
+                    <p>{{ chat.user }}</p>
                 </div>
                 <div class="chat-bubble bot">
-                    <p><strong>Bot:</strong> {{ chat.bot }}</p>
+                    <p>{{ chat.bot }}</p>
                     <audio class="audio" controls>
                         <source src="{{ url_for('serve_audio', filename=chat.audio) }}" type="audio/mpeg">
                         Your browser does not support the audio element.
@@ -157,7 +208,13 @@
             <button type="submit">Send</button>
         </form>
     </div>
-
+    <div class="footer">
+        <a href="https://github.com/SammyAlawar/Recommender" target="_blank" class="github-link">
+            <img src="/static/github_logo.webp" alt="GitHub Logo" class="github-logo">
+        </a>
+    </div>
+    
+    
     <script>
         const form = document.getElementById("chat-form");
         const chatHistory = document.getElementById("chat-history");
@@ -174,7 +231,7 @@
             // Append user's input to the chat history
             chatHistory.innerHTML += `
                 <div class="chat-bubble user">
-                    <p><strong>You:</strong> ${userInput}</p>
+                    <p>${userInput}</p>
                 </div>
             `;
     
@@ -182,7 +239,7 @@
             const botResponsePlaceholder = document.createElement("div");
             botResponsePlaceholder.className = "chat-bubble bot";
             botResponsePlaceholder.innerHTML = `
-                <p><strong>Bot:</strong>
+                <p>
                     <span class="dots">
                         <span></span><span></span><span></span>
                     </span>
@@ -202,7 +259,7 @@
             .then(data => {
                 // Replace the placeholder with the bot's actual response
                 botResponsePlaceholder.innerHTML = `
-                    <p><strong>Bot:</strong> ${data.bot_reply}</p>
+                    <p>${data.bot_reply}</p>
                     <audio class="audio" controls>
                         <source src="/speech/${data.audio_filename}" type="audio/mpeg">
                         Your browser does not support the audio element.
@@ -215,7 +272,7 @@
             .catch(error => {
                 console.error("Error:", error);
                 botResponsePlaceholder.innerHTML = `
-                    <p><strong>Bot:</strong> Sorry, something went wrong. Please try again.</p>
+                    <p>Sorry, something went wrong. Please try again.</p>
                 `;
     
                 // Re-enable the send button
@@ -226,7 +283,6 @@
             document.getElementById("user-input").value = "";
         });
     </script>
-    
     
     
 </body>
