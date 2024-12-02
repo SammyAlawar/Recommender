@@ -45,7 +45,19 @@
             border-bottom: 2px solid #ffb400;
         }
 
-
+        h1 {
+            display: flex;
+            justify-content: center; /* Centers horizontally */
+            align-items: center; /* Centers vertically if needed */
+            font-size: 2.5rem; /* Adjust as needed */
+            color: #fff; /* Text color */
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+            padding: 20px 40px; /* Add padding for more spacing */
+            border-radius: 10px; /* Rounded corners */
+            margin: 20px auto; /* Centered margin */
+            width: fit-content; /* Automatically size based on content */
+        }
+        
         .chat-bubble {
             margin: 10px 0;
             padding: 10px 15px;
@@ -184,7 +196,8 @@
 </head>
 <body>
     <div class="chat-container">
-        <h1>Entertainment Bot: Your Personalized Guide to Movies, TV Shows, and More!</h1>
+        
+        <h1>🍿 Entertainment Recommender 🍿</h1>
 
         <!-- Chat history -->
         <div id="chat-history">
