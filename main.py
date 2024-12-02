@@ -89,7 +89,7 @@ def chat_with_bot(user_input, chat_history):
     response = client.chat.completions.create(
         model="gpt-4o",
         messages=api_history,
-        max_tokens=200,
+        max_tokens=1000,
     )
     assistant_reply = response.choices[0].message.content
 
