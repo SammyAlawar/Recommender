@@ -12,6 +12,8 @@ speech_dir.mkdir(exist_ok=True)
 # Initialize chat history
 chat_history = []
 
+from flask import jsonify
+
 @app.route("/", methods=["GET", "POST"])
 def home():
     global chat_history
@@ -29,7 +31,13 @@ def home():
         audio_filename = text_to_speech(bot_reply)
         chat_history[-1]["audio"] = audio_filename  # Update the last bot entry with audio file
 
+        # Return the bot's reply and audio filename as a JSON response
+        return jsonify({"bot_reply": bot_reply, "audio_filename": audio_filename})
+
+    # For GET requests, render the chat history page
     return render_template("chat.html", chat_history=chat_history)
+
+
 
 # Route to serve the audio files
 @app.route("/speech/<filename>")
