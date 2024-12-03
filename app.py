@@ -3,6 +3,7 @@ from main import chat_with_bot, text_to_speech
 from pathlib import Path
 import uuid
 import sys_msg
+import json
 
 app = Flask(__name__)
 
@@ -20,6 +21,10 @@ def home():
     global chat_history
     bot_reply = None
     audio_filename = None
+
+    # Fetch the top 10 movies
+    with open("static/movie_and_poster_cache.json", "r") as f:
+        popular_movies = json.load(f)
 
     if request.method == "POST":
         # Get user input and language selection
@@ -45,7 +50,7 @@ def home():
         return jsonify({"bot_reply": bot_reply, "audio_filename": audio_filename})
 
     # For GET requests, render the chat history page
-    return render_template("chat.html", chat_history=chat_history)
+    return render_template("chat.html", chat_history=chat_history, popular_movies=popular_movies)
 
 
 
@@ -54,6 +59,7 @@ def home():
 @app.route("/speech/<filename>")
 def serve_audio(filename):
     return send_from_directory(speech_dir, filename)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
