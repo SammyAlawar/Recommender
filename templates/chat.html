@@ -33,6 +33,18 @@
             padding: 20px;
         }
 
+        .header {
+            background: linear-gradient(to right, #ff414d, #ffb400); /* Vibrant gradient */
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #ffb400;
+        }
+
         h1 {
             text-align: center;
             font-size: 2.5rem;
@@ -53,17 +65,60 @@
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .user {
+         .user {
             align-self: flex-end;
             max-width: 50%;
             background-color: #ff414d;
             color: white;
+            position: relative; /* Enable positioning */
+            left: 370px; /* Adjust position from the right */
+            resize: none;
+            margin-top: 10px;
         }
 
         .bot {
             align-self: flex-start;
             background-color: #767676;
             color: #ffffff;
+            max-width: 100%;
+            right: 1;
+        }
+
+        .loading {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .dots {
+            display: inline-block;
+        }
+
+        .dots span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            margin: 0 2px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            animation: blink 1.5s infinite ease-in-out;
+        }
+
+        .dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes blink {
+            0%, 80%, 100% {
+                transform: scale(0);
+            }
+            40% {
+                transform: scale(1);
+            }
         }
 
         /* Form Container */
@@ -119,6 +174,36 @@
             background-color: #ffb400;
             transform: scale(1.05);
         }
+
+        .footer {
+            position: fixed; /* Keeps it in place */
+            bottom: 0; /* Anchors it to the bottom of the page */
+            left: 0;
+            right: 1;
+            width: 0%; /* Stretches it across the screen */
+            background-color: transparent; /* Matches your theme */
+            color: #972525;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .github-link {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .github-logo {
+            width: 60px;
+            height: 60px;
+            filter: invert(1); /* Makes the logo white to match a dark background */
+            transition: transform 0.3s ease;
+        }
+
+        .github-logo:hover {
+            transform: scale(1.1); /* Slight zoom-in effect on hover */
+        }
     </style>
 </head>
 <body>
@@ -153,7 +238,11 @@
             </div>
         </form>
     </div>
-
+    <div class="footer">
+        <a href="https://github.com/SammyAlawar/Recommender" target="_blank" class="github-link">
+            <img src="/static/github_logo.webp" alt="GitHub Logo" class="github-logo">
+        </a>
+    </div>
     <script>
         const form = document.getElementById("chat-form");
         const chatHistory = document.getElementById("chat-history");
