@@ -11,7 +11,7 @@
             background-image: url('/static/popcorn-7025931_1920.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Ensures the image stays in place */
+            background-attachment: fixed;
             margin: 0;
             padding: 0;
             display: flex;
@@ -33,31 +33,16 @@
             padding: 20px;
         }
 
-        .header {
-            background: linear-gradient(to right, #ff414d, #ffb400); /* Vibrant gradient */
-            color: #ffffff;
-            padding: 20px;
+        h1 {
             text-align: center;
-            font-size: 1.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 2px solid #ffb400;
+            font-size: 2.5rem;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px 40px;
+            border-radius: 10px;
+            margin: 20px auto;
         }
 
-        h1 {
-            display: flex;
-            justify-content: center; /* Centers horizontally */
-            align-items: center; /* Centers vertically if needed */
-            font-size: 2.5rem; /* Adjust as needed */
-            color: #fff; /* Text color */
-            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-            padding: 20px 40px; /* Add padding for more spacing */
-            border-radius: 10px; /* Rounded corners */
-            margin: 20px auto; /* Centered margin */
-            width: fit-content; /* Automatically size based on content */
-        }
-        
         .chat-bubble {
             margin: 10px 0;
             padding: 10px 15px;
@@ -73,72 +58,53 @@
             max-width: 50%;
             background-color: #ff414d;
             color: white;
-            position: relative; /* Enable positioning */
-            left: 370px; /* Adjust position from the right */
-            resize: none;
-            margin-top: 10px;
         }
 
         .bot {
             align-self: flex-start;
             background-color: #767676;
             color: #ffffff;
-            max-width: 100%;
-            right: 1;
         }
 
-        .loading {
-            font-size: 16px;
-            font-weight: 500;
-            color: #333;
-        }
-
-        .dots {
-            display: inline-block;
-        }
-
-        .dots span {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            margin: 0 2px;
-            background-color: #ffffff;
-            border-radius: 50%;
-            animation: blink 1.5s infinite ease-in-out;
-        }
-
-        .dots span:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        .dots span:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-
-        @keyframes blink {
-            0%, 80%, 100% {
-                transform: scale(0);
-            }
-            40% {
-                transform: scale(1);
-            }
-        }
-
-        form {
+        /* Form Container */
+        .form-container {
             display: flex;
+            justify-content: center;
+            align-items: center;
             margin-top: 15px;
         }
 
-        form input[type="text"] {
-            flex: 1;
+        /* Input Group */
+        .input-group {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+            gap: 10px; /* Spacing between elements */
+        }
+
+        /* Language Dropdown */
+        .language-dropdown {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            background-color: #ffffff;
+            flex: 0 0 150px; /* Fixed width for dropdown */
+        }
+
+        /* Input Field */
+        #user-input {
+            flex: 1; /* Take remaining space */
             padding: 10px;
             border: 1px solid #cccccc;
             border-radius: 5px;
             font-size: 16px;
         }
 
+        /* Send Button */
         form button {
-            background-color: #ff414d; /* Bright red */
+            background-color: #ff414d;
             color: #ffffff;
             border: none;
             padding: 12px 20px;
@@ -146,57 +112,17 @@
             border-radius: 8px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.2s ease;
+            flex-shrink: 0;
         }
 
         form button:hover {
-            background-color: #ffb400; /* Golden yellow */
+            background-color: #ffb400;
             transform: scale(1.05);
         }
-
-
-        audio {
-            width: 100%;
-            outline: none;
-            color: #ffffff;
-        }
-        .footer {
-            position: fixed; /* Keeps it in place */
-            bottom: 0; /* Anchors it to the bottom of the page */
-            left: 0;
-            right: 1;
-            width: 0%; /* Stretches it across the screen */
-            background-color: transparent; /* Matches your theme */
-            color: #972525;
-            text-align: center;
-            padding: 10px 0;
-            font-size: 14px;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        
-
-        .github-link {
-            display: inline-block;
-            text-decoration: none;
-        }
-
-        .github-logo {
-            width: 60px;
-            height: 60px;
-            filter: invert(1); /* Makes the logo white to match a dark background */
-            transition: transform 0.3s ease;
-        }
-
-        .github-logo:hover {
-            transform: scale(1.1); /* Slight zoom-in effect on hover */
-        }
-
-
     </style>
 </head>
 <body>
     <div class="chat-container">
-        
         <h1>🍿 Entertainment Recommender 🍿</h1>
 
         <!-- Chat history -->
@@ -216,39 +142,40 @@
         </div>
 
         <!-- Input form -->
-        <form id="chat-form" method="POST">
-            <input type="text" id="user-input" name="user_input" placeholder="Ask away..." required>
-            <button type="submit">Send</button>
+        <form id="chat-form" method="POST" class="form-container">
+            <div class="input-group">
+                <select id="language-select" name="language" class="language-dropdown" required>
+                    <option value="en" selected>English</option>
+                    <option value="ar">Arabic</option>
+                </select>
+                <input type="text" id="user-input" name="user_input" placeholder="Ask away..." required>
+                <button type="submit">Send</button>
+            </div>
         </form>
     </div>
-    <div class="footer">
-        <a href="https://github.com/SammyAlawar/Recommender" target="_blank" class="github-link">
-            <img src="/static/github_logo.webp" alt="GitHub Logo" class="github-logo">
-        </a>
-    </div>
-    
-    
+
     <script>
         const form = document.getElementById("chat-form");
         const chatHistory = document.getElementById("chat-history");
         const sendButton = form.querySelector("button");
-    
+
         form.addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent default form submission
-    
+            event.preventDefault();
+
             const userInput = document.getElementById("user-input").value;
-    
-            // Disable the send button
+            const selectedLanguage = document.getElementById("language-select").value;
+
+            console.log(`User Input: ${userInput}`);
+            console.log(`Selected Language: ${selectedLanguage}`);
+
             sendButton.disabled = true;
-    
-            // Append user's input to the chat history
+
             chatHistory.innerHTML += `
                 <div class="chat-bubble user">
                     <p>${userInput}</p>
                 </div>
             `;
-    
-            // Add a placeholder for the bot's response with the spinning dots animation
+
             const botResponsePlaceholder = document.createElement("div");
             botResponsePlaceholder.className = "chat-bubble bot";
             botResponsePlaceholder.innerHTML = `
@@ -259,18 +186,17 @@
                 </p>
             `;
             chatHistory.appendChild(botResponsePlaceholder);
-    
-            // Send user input to the backend
+
             fetch("/", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded"
                 },
-                body: new URLSearchParams({ user_input: userInput })
+                body: new URLSearchParams({ user_input: userInput, language: selectedLanguage })
             })
-            .then(response => response.json()) // Parse JSON response
+            .then(response => response.json())
             .then(data => {
-                // Replace the placeholder with the bot's actual response
+                console.log("Response from server:", data);
                 botResponsePlaceholder.innerHTML = `
                     <p>${data.bot_reply}</p>
                     <audio class="audio" controls>
@@ -278,8 +204,6 @@
                         Your browser does not support the audio element.
                     </audio>
                 `;
-    
-                // Re-enable the send button
                 sendButton.disabled = false;
             })
             .catch(error => {
@@ -287,16 +211,11 @@
                 botResponsePlaceholder.innerHTML = `
                     <p>Sorry, something went wrong. Please try again.</p>
                 `;
-    
-                // Re-enable the send button
                 sendButton.disabled = false;
             });
-    
-            // Clear the user input field
+
             document.getElementById("user-input").value = "";
         });
     </script>
-    
-    
 </body>
 </html>

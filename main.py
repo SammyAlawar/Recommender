@@ -5,6 +5,8 @@ from openai import OpenAI
 from dotenv import load_dotenv, find_dotenv
 import sys_msg
 
+
+
 # Load environment variables from .env file
 load_dotenv(find_dotenv())
 
@@ -58,18 +60,18 @@ def validate_history(history):
             raise ValueError(f"Malformed API history entry: {msg}")
 
 
-# Function to generate chatbot responses
-def chat_with_bot(user_input, chat_history):
+def chat_with_bot(user_input, chat_history, system_message):
     """
     Generates a chatbot response based on user input and updates the conversation history.
     Args:
         user_input (str): The user's input message.
         chat_history (list): The conversation history for the frontend.
+        system_message (str): The system message to initialize the chatbot.
     Returns:
         tuple: The assistant's reply and the updated chat_history.
     """
     # Maintain a separate history for OpenAI API
-    api_history = [{"role": "system", "content": sys_msg.system_message}]
+    api_history = [{"role": "system", "content": system_message}]
     for entry in chat_history:
         if "user" in entry:
             api_history.append({"role": "user", "content": entry["user"]})

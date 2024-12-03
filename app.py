@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, send_from_directory
 from main import chat_with_bot, text_to_speech
 from pathlib import Path
 import uuid
+import sys_msg
 
 app = Flask(__name__)
 
@@ -21,11 +22,20 @@ def home():
     audio_filename = None
 
     if request.method == "POST":
-        # Get user input
+        # Get user input and language selection
         user_input = request.form["user_input"]
+        selected_language = request.form["language"]
+
+        # Choose the system message based on the language
+        if selected_language == "ar":
+            system_message = sys_msg.system_message_ar
+        else:
+            system_message = sys_msg.system_message
+
+        
 
         # Get bot response
-        bot_reply, chat_history = chat_with_bot(user_input, chat_history)
+        bot_reply, chat_history = chat_with_bot(user_input, chat_history, system_message)
 
         # Generate unique audio file for the bot reply
         audio_filename = text_to_speech(bot_reply)
@@ -36,6 +46,7 @@ def home():
 
     # For GET requests, render the chat history page
     return render_template("chat.html", chat_history=chat_history)
+
 
 
 
