@@ -5,6 +5,9 @@ from pathlib import Path
 import sys_msg
 import json
 import random
+from transformers import AutoModelForSequenceClassification, AutoTokenizer
+from finetuned_test import predict_emotions, model, tokenizer
+print(f"Running on Python version: {sys.version}")
 app = Flask(__name__)
 
 import secrets
@@ -35,20 +38,16 @@ def home():
         user_input = request.form["user_input"]
         selected_language = request.form["language"]
 
-        censored_input = censor_inappropriate_words(user_input, load_inappropriate_words('inappropriate_words.csv', selected_language))
-        # Log censored input
-        print(f"Censored User Input: {censored_input}")
-
         # Choose the system message based on the language
         if selected_language == "ar":
             system_message = sys_msg.system_message_ar
         else:
             system_message = sys_msg.system_message
 
-        
-
+        #Get predicted emotion from fine tuned model
+        predicted_emotion = predict_emotions(user_input, model, tokenizer)
         # Get bot response
-        bot_reply, chat_history = chat_with_bot(censored_input, chat_history, system_message)
+        bot_reply, chat_history = chat_with_bot(user_input, chat_history, system_message, predicted_emotion)
 
         # Generate unique audio file for the bot reply
         audio_filename = text_to_speech(bot_reply)
@@ -59,6 +58,7 @@ def home():
 
     # For GET requests, render the chat history page
     return render_template("chat.html", chat_history=chat_history, popular_movies=popular_movies)
+
 
 @app.route("/load_inappropriate_words")
 def load_inappropriate_words_route():
@@ -150,4 +150,4 @@ def serve_audio(filename):
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", debug=True, port=5000)
+    app.run(host="0.0.0.0", debug=True, port=5001)
