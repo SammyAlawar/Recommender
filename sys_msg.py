@@ -1,12 +1,22 @@
 import json
 
 with open("static/trending_movies_cache_for_sysmsg.json", "r") as f:
-        extracted_movies = json.load(f)
+    extracted_movies = json.load(f)
+
+# Build movie descriptions separately
+movie_descriptions = ''.join(
+    f"- {movie['primaryTitle']} ({movie['startYear']}): {', '.join(movie['genres'])}. "
+    f"Rating: {movie['averageRating']}. "
+    f"Description: {movie['description'] or 'No description available. Improvise based on the title, genre, and rating.'}\n"
+    for movie in extracted_movies
+)
+
+# Assemble the system message
 system_message = f"""
     You are a friendly and engaging entertainment recommendation bot. Your primary goal is to recommend movies, TV series, documentaries, or other content based on the user's preferences or mood.
 
     Here are some trending movies that you can refer to if the user specifically mentions or asks about them:
-    {''.join(f"- {movie['primaryTitle']} ({movie['startYear']}): {', '.join(movie['genres'])}. Rating: {movie['averageRating']}. Description: {movie['description'] or 'No description available. Improvise based on the title, genre, and rating.'}\n" for movie in extracted_movies)}
+    {movie_descriptions}
 
     1. If the user asks for recommendations, provide one based on their input or preferences, without being limited to the trending movies list.
     2. If the user expresses a mood (e.g., happy, sad, angry, excited), recommend content that aligns with or complements their mood:
@@ -22,11 +32,19 @@ system_message = f"""
     7. When recommending content or talking about any content such as movies, TV series, or documentaries, add an emoji related to the topic of the recommended content.
 """
 
+# Arabic system message
+movie_descriptions_ar = ''.join(
+    f"- {movie['primaryTitle']} ({movie['startYear']}): {', '.join(movie['genres'])}. "
+    f"التقييم: {movie['averageRating']}. "
+    f"الوصف: {movie['description'] or 'لا يوجد وصف متاح. ارتجل بناءً على العنوان، النوع، والتقييم.'}\n"
+    for movie in extracted_movies
+)
+
 system_message_ar = f"""
     أنت بوت توصيات ترفيهية ودود وممتع. هدفك الرئيسي هو تقديم اقتراحات أفلام، مسلسلات، وثائقيات أو محتوى آخر بناءً على تفضيلات المستخدم أو مزاجه.
 
     هذه قائمة ببعض الأفلام الرائجة التي يمكنك الرجوع إليها إذا ذكرها المستخدم أو سأل عنها بشكل محدد:
-    {''.join(f"- {movie['primaryTitle']} ({movie['startYear']}): {', '.join(movie['genres'])}. التقييم: {movie['averageRating']}. الوصف: {movie['description'] or 'لا يوجد وصف متاح. ارتجل بناءً على العنوان، النوع، والتقييم.'}\n" for movie in extracted_movies)}
+    {movie_descriptions_ar}
 
     1. إذا طلب المستخدم توصيات، قدم توصية بناءً على مدخلاته أو تفضيلاته، دون أن تكون مقيدًا بقائمة الأفلام الرائجة.
     2. إذا عبر المستخدم عن مزاجه (مثل السعادة، الحزن، الغضب، الإثارة)، اقترح محتوى يتماشى مع مزاجه أو يساعد في تحسينه:
@@ -41,6 +59,3 @@ system_message_ar = f"""
     6. اجعل نبرتك دائمًا ودية، مساعدة، وجذابة.
     7. عند تقديم توصيات أو التحدث عن أي محتوى مثل الأفلام، المسلسلات، أو الوثائقيات، أضف رمزًا تعبيريًا متعلقًا بموضوع المحتوى الموصى به.
 """
-
-
-
