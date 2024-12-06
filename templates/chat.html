@@ -260,6 +260,23 @@
             font-size: 14px;
             box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
         }
+
+        /* Record Button */
+        #record-button {
+            background-color: #ff414d;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #record-button:hover {
+            background-color: #ffb400;
+        }
+
     </style>
 </head>
 
@@ -293,10 +310,11 @@
         <!-- Input form -->
         <form id="chat-form" method="POST" class="form-container">
             <div class="input-group">
+                <button type="button" id="record-button" class="language-button">Record</button>
                 <input type="text" id="user-input" name="user_input" placeholder="Ask away..." required>
-                <button type="submit">Send</button>
+                <button type="submit" class="language-button">Send</button>
             </div>
-        </form>
+        </form>  
     </div>
 
     <!-- Trending Movies -->
@@ -325,14 +343,22 @@
         const languageEnButton = document.getElementById("language-en");
         const languageArButton = document.getElementById("language-ar");
 
+        // Default to English
+        let currentLanguage = "en-US";
+
         languageEnButton.addEventListener("click", () => {
             languageEnButton.classList.add("active");
             languageArButton.classList.remove("active");
+            currentLanguage = "en-US"; // Set to English
+            if (recognition) recognition.lang = currentLanguage; // Update SpeechRecognition language
         });
 
         languageArButton.addEventListener("click", () => {
             languageArButton.classList.add("active");
             languageEnButton.classList.remove("active");
+            currentLanguage = "ar-SA"; // Set to Arabic (Saudi Arabia)
+            if (recognition) recognition.lang = currentLanguage; // Update SpeechRecognition language
+            
         });
 
         // Handle form submission and chat interactions
@@ -394,6 +420,56 @@
 
             // Clear the input field after sending
             document.getElementById("user-input").value = "";
+        });
+        
+        const recordButton = document.getElementById("record-button");
+        let recognition; // Variable to store SpeechRecognition instance
+        let isRecording = false; // Recording state
+
+        // Check for browser support
+        if ("webkitSpeechRecognition" in window || "SpeechRecognition" in window) {
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            recognition = new SpeechRecognition();
+
+            // Configure SpeechRecognition
+            recognition.lang = currentLanguage; // Set default language (change if needed)
+            recognition.interimResults = false; // Get only the final results
+            recognition.maxAlternatives = 1;
+
+            // Handle recognition result
+            recognition.onresult = function (event) {
+                const speechResult = event.results[0][0].transcript;
+
+                // Get the current value of the input field and append the new result
+                const userInputField = document.getElementById("user-input");
+                userInputField.value = `${userInputField.value} ${speechResult}`.trim(); // Append and trim extra spaces
+            };
+
+            recognition.onerror = function (event) {
+                console.error("Speech recognition error:", event.error);
+            };
+
+            recognition.onend = function () {
+                isRecording = false;
+                recordButton.textContent = "Record";
+            };
+        } else {
+            alert("Speech recognition is not supported in your browser. Please try a different browser.");
+        }
+
+        // Handle record button click
+        recordButton.addEventListener("click", () => {
+            if (!recognition) return; // Exit if SpeechRecognition is not supported
+
+            if (isRecording) {
+                recognition.stop(); // Stop recording
+                isRecording = false;
+                recordButton.textContent = "Record";
+            } else {
+                recognition.start(); // Start recording
+                isRecording = true;
+                recordButton.textContent = "Stop";
+            }
         });
     </script>
 
