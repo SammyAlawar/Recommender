@@ -1,0 +1,173 @@
+[
+    {
+        "id": "tt0120338",
+        "primaryTitle": "Titanic",
+        "year": 1997,
+        "rating": "7.9",
+        "description": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
+        "genres": ["Drama", "Romance"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjEyZDUzYjktZDEyZS00ZDg3LTg3MTQtZmYxYmNjY2FmZTA4XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0083866",
+        "primaryTitle": "E.T. the Extra-Terrestrial",
+        "year": 1982,
+        "rating": "7.9",
+        "description": "A troubled child summons the courage to help a friendly alien escape from Earth and return to his home planet.",
+        "genres": ["Sci-Fi", "Family"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTgtMWJkZS00ZWFhLWFhOTQtODQ5ZjU1OTgwZDhhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0032138",
+        "primaryTitle": "The Wizard of Oz",
+        "year": 1939,
+        "rating": "8.1",
+        "description": "Young Dorothy Gale and her dog Toto are swept away by a tornado from their Kansas farm to the magical Land of Oz and embark on a quest with three new friends to see the Wizard, who can return her to her home and fulfill the others' wishes.",
+        "genres": ["Adventure", "Family", "Fantasy"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BNjUyMTc4MDExN15BMl5BanBnXkFtZTgwNDYwMzMzNDE@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0076759",
+        "primaryTitle": "Star Wars: Episode IV - A New Hope",
+        "year": 1977,
+        "rating": "8.6",
+        "description": "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.",
+        "genres": ["Action", "Adventure", "Fantasy"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BZWY4ZGM0ZTMtNzg4OC00NmI4LWJiMWEtMWQ3NjlkOWQ5YzQ1XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0167260",
+        "primaryTitle": "The Lord of the Rings: The Return of the King",
+        "year": 2003,
+        "rating": "9.0",
+        "description": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+        "genres": ["Action", "Adventure", "Drama"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BYWZjNzZlNDktZmNlMC00NTk5LTllYTgtOTMwNDAyZGMzMGFmXkEyXkFqcGdeQXVyNDY2MjcyOTQ@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0118799",
+        "primaryTitle": "Life Is Beautiful",
+        "year": 1997,
+        "rating": "8.6",
+        "description": "When an open-minded Jewish waiter and his son become victims of the Holocaust, he uses a perfect mixture of will, humor and imagination to protect his son from the dangers around their camp.",
+        "genres": ["Comedy", "Drama", "Romance"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjQ0Nzc2Nzg3OV5BMl5BanBnXkFtZTcwMjQ2NTEzMw@@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0126029",
+        "primaryTitle": "Shrek",
+        "year": 2001,
+        "rating": "7.9",
+        "description": "A mean lord exiles fairytale creatures to the swamp of a grumpy ogre, who must go on a quest and rescue a princess for the lord in order to get his land back.",
+        "genres": ["Animation", "Adventure", "Comedy"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTk3OTc4NzY3MF5BMl5BanBnXkFtZTgwOTUxNzY1MTI@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt1045658",
+        "primaryTitle": "Silver Linings Playbook",
+        "year": 2012,
+        "rating": "7.7",
+        "description": "After a stint in a mental institution, former teacher Pat Solitano moves back in with his parents and tries to reconcile with his ex-wife. Things get more challenging when Pat meets Tiffany, a mysterious girl with problems of her own.",
+        "genres": ["Comedy", "Drama", "Romance"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjIyNzY1MTc5Nl5BMl5BanBnXkFtZTcwNzYyOTY0OA@@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0421715",
+        "primaryTitle": "The Curious Case of Benjamin Button",
+        "year": 2008,
+        "rating": "7.8",
+        "description": "Benjamin Button, born in 1918 with the physical state of an elderly man, ages in reverse. He experiences love and break-ups, ecstasy and sorrow, and timelessness by the time he dies in 2003 as a baby.",
+        "genres": ["Drama", "Fantasy", "Romance"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BNmQ4YTNiNjgtN2FkMi00OTdlLTk3MzMtYmNhYjFmMzM2MDZhXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0107048",
+        "primaryTitle": "Groundhog Day",
+        "year": 1993,
+        "rating": "8.0",
+        "description": "A narcissistic, self-centered weatherman finds himself in a time loop on Groundhog Day.",
+        "genres": ["Comedy", "Fantasy", "Romance"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjAxMzYxNzMzMF5BMl5BanBnXkFtZTcwNzE2NzM3NA@@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt3783958",
+        "primaryTitle": "La La Land",
+        "year": 2016,
+        "rating": "8.0",
+        "description": "When Sebastian, a pianist, and Mia, an actress, follow their passion and achieve success in their respective fields, they find themselves torn between their love for each other and their careers.",
+        "genres": ["Comedy", "Drama", "Music"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTc2NDI1NjEwNF5BMl5BanBnXkFtZTgwMDU2MTQ1OTE@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0029583",
+        "primaryTitle": "Snow White and the Seven Dwarfs",
+        "year": 1937,
+        "rating": "7.6",
+        "description": "Exiled into the dangerous forest by her wicked stepmother, a princess is rescued by seven dwarf miners who make her part of their household.",
+        "genres": ["Animation", "Family", "Fantasy"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BZTliYTJmZTgtYWI3ZS00NDk4LTgyZjQtNGE3MzZmODk1YjU3XkEyXkFqcGdeQXVyNzc5MjA3OA@@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0103064",
+        "primaryTitle": "Terminator 2: Judgment Day",
+        "year": 1991,
+        "rating": "8.6",
+        "description": "A cyborg, identical to the one who failed to kill Sarah Connor, must now protect her ten year old son John from an even more advanced and powerful cyborg.",
+        "genres": ["Action", "Sci-Fi"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjE3MzYzNDU5OV5BMl5BanBnXkFtZTgwNzY2NzkzMTE@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0110357",
+        "primaryTitle": "The Lion King",
+        "year": 1994,
+        "rating": "8.5",
+        "description": "Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.",
+        "genres": ["Animation", "Adventure", "Drama"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BNzA5Y2FkNzktZTQ5My00Yjc2LTk4MGQtNDRmYTExMDkwNjgwXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0068646",
+        "primaryTitle": "The Godfather",
+        "year": 1972,
+        "rating": "9.2",
+        "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+        "genres": ["Crime", "Drama"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BZmU1MGE3OTUtMTI3Zi00MjhjLTlkMGMtZjIxZmI3ZDIwMDJjXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0107290",
+        "primaryTitle": "Jurassic Park",
+        "year": 1993,
+        "rating": "8.2",
+        "description": "An industrialist invites some experts to visit his theme park of cloned dinosaurs. After a power failure, the creatures run loose, putting everyone's lives, including his grandchildren's, in danger.",
+        "genres": ["Adventure", "Sci-Fi", "Thriller"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BNzViOTQ4MjMtYTdhNC00MmI2LTg3ZGUtYjNiZmY5NTAzNmMwXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0082971",
+        "primaryTitle": "Indiana Jones and the Raiders of the Lost Ark",
+        "year": 1981,
+        "rating": "8.4",
+        "description": "In 1936, archaeologists and adventurers of the U.S. government hired Indiana Jones to find the Ark of the Covenant before the Nazis could obtain its extraordinary powers.",
+        "genres": ["Action", "Adventure"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BM2EyZmNmNjMtYTA4OC00ZjQ2LWI2YjktZjBhZGJkNTI2NzBjXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0241527",
+        "primaryTitle": "Harry Potter and the Sorcerer's Stone",
+        "year": 2001,
+        "rating": "7.7",
+        "description": "An orphaned boy enrolls in a school of wizardry, where he learns the truth about himself, his family and the terrible evil that haunts the magical world.",
+        "genres": ["Adventure", "Family", "Fantasy"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjAxMzkxNTMyM15BMl5BanBnXkFtZTcwODcxNDIzMw@@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0111161",
+        "primaryTitle": "The Shawshank Redemption",
+        "year": 1994,
+        "rating": "9.3",
+        "description": "A banker convicted of uxoricide forms a friendship over a quarter century with a hardened convict, while maintaining his innocence and trying to remain hopeful through simple compassion.",
+        "genres": ["Drama"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZWFmLWIwZTAtYzVjZGE3ZTIzODNlXkEyXkFqcGdeQXVyNDY2MjcyOTQ@._V1_SX300.jpg"
+    }
+]

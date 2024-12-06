@@ -80,6 +80,8 @@ def validate_history(history):
             raise ValueError(f"Malformed API history entry: {msg}")
 
 
+from flask import session
+
 def chat_with_bot(user_input, chat_history, system_message):
     """
     Generates a chatbot response based on user input and updates the conversation history.
@@ -90,10 +92,6 @@ def chat_with_bot(user_input, chat_history, system_message):
     Returns:
         tuple: The assistant's reply and the updated chat_history.
     """
-    file_path = 'inappropriate_words.csv'
-    words = load_inappropriate_words(file_path)
-    user_input = censor_inappropriate_words(user_input, words)
-
     # Maintain a separate history for OpenAI API
     api_history = [{"role": "system", "content": system_message}]
     for entry in chat_history:

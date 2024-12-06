@@ -1,0 +1,60 @@
+<div id="quiz-container">
+    <h1>Movie Quiz</h1>
+    <div id="movie-details">
+        <img id="movie-poster" src="{{ movie['poster'] }}" alt="Movie Poster">
+        <h3 id="movie-title">{{ movie['primaryTitle'] }}</h3>
+        <p id="movie-description">{{ movie['description'] }}</p>
+    </div>
+    <div id="quiz-controls">
+        <button id="like-button">Like</button>
+        <button id="dislike-button">Dislike</button>
+    </div>
+</div>
+<div id="result-box" style="display: none; text-align: center;">
+    <!-- The result message will be dynamically inserted here -->
+    <button id="back-to-chat-button" style="margin-top: 20px; padding: 10px 20px; font-size: 16px; border: none; background-color: #007BFF; color: white; border-radius: 5px; cursor: pointer;">
+        Back to Chat
+    </button>
+</div>
+<script>
+    let currentIndex = {{ index }};
+    const movieDetails = document.getElementById("movie-details");
+    const quizControls = document.getElementById("quiz-controls");
+    const resultBox = document.getElementById("result-box");
+    const backToChatButton = document.getElementById("back-to-chat-button");
+
+    // Redirect the user back to the home page when the button is clicked
+    backToChatButton.onclick = () => {
+        window.location.href = "/";
+    };
+
+    document.getElementById("like-button").onclick = () => sendResponse(true);
+    document.getElementById("dislike-button").onclick = () => sendResponse(false);
+
+    function sendResponse(liked) {
+        fetch("/quiz/response", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ liked, index: currentIndex }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.finished) {
+                // Hide quiz and show the result box
+                movieDetails.style.display = "none";
+                quizControls.style.display = "none";
+                resultBox.style.display = "block";
+                resultBox.insertAdjacentHTML("afterbegin", `<p>${data.result_box}</p>`);
+            } else {
+                // Update the movie details
+                const { movie, index } = data;
+                currentIndex = index;
+                document.getElementById("movie-title").innerText = movie.primaryTitle;
+                document.getElementById("movie-poster").src = movie.poster;
+                document.getElementById("movie-description").innerText = movie.description;
+            }
+        });
+    }
+</script>
