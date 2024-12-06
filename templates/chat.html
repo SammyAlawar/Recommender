@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entertainment Recommender Bot</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('https://hcdevilsadvocate.com/wp-content/uploads/2019/01/netflix-background-9-900x506.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* Chatbot Container */
+        .chat-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            margin-top: 50px;
+            width: 90%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        /* Title Font Style */
+        h1 {
+            font-family: 'Londrina Sketch', cursive, 'Playfair Display', serif;
+            text-align: center;
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .chat-bubble {
+            margin: 10px 0;
+            padding: 10px 15px;
+            border-radius: 15px;
+            max-width: 100%;
+            line-height: 1.6;
+            word-wrap: break-word;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .user {
+            align-self: flex-end;
+            max-width: 50%;
+            background-color: #dcdcdc;
+            color: #000000;
+            /* Red color for user text */
+            position: relative;
+            left: 370px;
+            margin-top: 10px;
+        }
+
+        .bot {
+            align-self: flex-start;
+            background-color: #aaa8a8;
+            color: #000000;
+            max-width: 100%;
+        }
+
+        .dots {
+            display: inline-block;
+        }
+
+        .dots span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            margin: 0 2px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            animation: blink 1.5s infinite ease-in-out;
+        }
+
+        .dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes blink {
+
+            0%,
+            80%,
+            100% {
+                transform: scale(0);
+            }
+
+            40% {
+                transform: scale(1);
+            }
+        }
+
+        /* Form Container */
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+            gap: 10px;
+        }
+
+        /* Language Buttons */
+        .language-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+
+        .language-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            background-color: #ff414d;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .language-button.active {
+            background-color: #ffb400;
+        }
+
+        /* Input and Button Styles */
+        #user-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        form button {
+            background-color: #ff414d;
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        form button:hover {
+            background-color: #ffb400;
+            transform: scale(1.05);
+        }
+
+        .github-link {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .github-logo {
+            width: 60px;
+            height: 60px;
+            filter: invert(1);
+            /* Makes the logo white to match a dark background */
+            transition: transform 0.3s ease;
+        }
+
+        .github-logo:hover {
+            transform: scale(1.1);
+            /* Slight zoom-in effect on hover */
+        }
+
+        /* Trending Movies Section */
+        .movie-list-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            width: 90%;
+            max-width: 1200px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .movie {
+            display: inline-block;
+            width: 200px;
+            margin-right: 15px;
+            border-radius: 8px;
+            background-color: #f4f4f4;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            text-align: center;
+            min-height: 350px;
+            box-sizing: border-box;
+        }
+
+        .movie img {
+            width: 100%;
+            border-radius: 8px;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .movie a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+            height: 60px;
+            line-height: 20px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .movie a:hover {
+            color: #ff414d;
+        }
+
+        /* Footer Style */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 1;
+            width: 0%;
+            /* Stretches it across the screen */
+            background-color: transparent;
+            /* Matches your theme */
+            color: #972525;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Record Button */
+        #record-button {
+            background-color: #ff414d;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #record-button:hover {
+            background-color: #ffb400;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Chatbot -->
+    <div class="chat-container">
+        <h1>🍿 Entertainment Recommender 🍿</h1>
+        <!-- Language Buttons -->
+        <!-- Language Buttons -->
+        <div class="language-buttons">
+            <button class="language-button active" id="language-en">English</button>
+            <button class="language-button" id="language-ar">Arabic</button>
+        </div>
+
+        <!-- Chat history -->
+        <div id="chat-history">
+            {% for chat in chat_history %}
+            <div class="chat-bubble user">
+                <p>{{ chat.user }}</p>
+            </div>
+            <div class="chat-bubble bot">
+                <p>{{ chat.bot }}</p>
+                <audio class="audio" controls>
+                    <source src="{{ url_for('serve_audio', filename=chat.audio) }}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Input form -->
+        <form id="chat-form" method="POST" class="form-container">
+            <div class="input-group">
+                <button type="button" id="record-button" class="language-button">Record</button>
+                <input type="text" id="user-input" name="user_input" placeholder="Ask away..." required>
+                <button type="submit" class="language-button">Send</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Trending Movies -->
+    <div class="movie-list-container">
+        <h3>Top Trending Movies</h3>
+        {% for movie in popular_movies %}
+        <div class="movie">
+            <img src="{{ movie.image }}" alt="Movie Thumbnail">
+            <a href="{{ movie.url }}" target="_blank">
+                <span>{{ movie['primaryTitle'] }} ({{movie.startYear}})</span><br>
+                <span>{{ movie['averageRating'] }}</span>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <a href="https://github.com/SammyAlawar/Recommender" target="_blank" class="github-link">
+            <img src="/static/github_logo.webp" alt="GitHub Logo" class="github-logo">
+        </a>
+    </div>
+
+    <script>
+        // Language button toggle functionality
+        const languageEnButton = document.getElementById("language-en");
+        const languageArButton = document.getElementById("language-ar");
+
+        // Default to English
+        let currentLanguage = "en-US";
+
+        languageEnButton.addEventListener("click", () => {
+            languageEnButton.classList.add("active");
+            languageArButton.classList.remove("active");
+            currentLanguage = "en-US"; // Set to English
+            if (recognition) recognition.lang = currentLanguage; // Update SpeechRecognition language
+        });
+
+        languageArButton.addEventListener("click", () => {
+            languageArButton.classList.add("active");
+            languageEnButton.classList.remove("active");
+            currentLanguage = "ar-SA"; // Set to Arabic (Saudi Arabia)
+            if (recognition) recognition.lang = currentLanguage; // Update SpeechRecognition language
+
+        });
+
+        // Handle form submission and chat interactions
+        const form = document.getElementById("chat-form");
+        const chatHistory = document.getElementById("chat-history");
+        const sendButton = form.querySelector("button");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const userInput = document.getElementById("user-input").value;
+            const selectedLanguage = languageEnButton.classList.contains("active") ? "en" : "ar";
+
+            sendButton.disabled = true;  // Disable the send button while waiting for the response
+
+            fetch(`/load_inappropriate_words?language=${selectedLanguage}`)
+                .then(response => response.json())
+                .then(data => {
+                    const inappropriateWords = data.words;
+
+                    // Censor the user input before appending to chat history
+                    const censoredInput = censorInappropriateWords(userInput, inappropriateWords);
+                    // Append user's input to the chat history
+                    chatHistory.innerHTML += ` 
+            <div class="chat-bubble user">
+                <p>${censoredInput}</p>
+            </div>
+        `;
+
+                    // Placeholder for bot's response with loading dots
+                    const botResponsePlaceholder = document.createElement("div");
+                    botResponsePlaceholder.className = "chat-bubble bot";
+                    botResponsePlaceholder.innerHTML = ` 
+            <p><span class="dots"><span></span><span></span><span></span></span></p>
+        `;
+                    chatHistory.appendChild(botResponsePlaceholder);
+
+                    // Send the user input and selected language to the backend
+                    fetch("/", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/x-www-form-urlencoded"
+                        },
+                        body: new URLSearchParams({ user_input: userInput, language: selectedLanguage })
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            // Replace the loading dots with the actual bot reply
+                            botResponsePlaceholder.innerHTML = ` 
+                 <p>${data.bot_reply}</p>
+                            <audio class="audio" controls>
+                                <source src="/speech/${data.audio_filename}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+            `;
+                            chatHistory.scrollTop = chatHistory.scrollHeight; // Scroll to the bottom after each message
+                            sendButton.disabled = false; // Re-enable the send button
+                        })
+                        .catch(error => {
+                            // Handle error in case of failure
+                            botResponsePlaceholder.innerHTML = ` 
+                <p>Sorry, something went wrong. Please try again.</p>
+            `;
+                            sendButton.disabled = false;
+                        });
+
+                    // Clear the input field after sending
+                    document.getElementById("user-input").value = "";
+                });
+            // Function to censor inappropriate words
+            function censorInappropriateWords(input, inappropriateWords) {
+                let censoredInput = input;
+
+                inappropriateWords.forEach(word => {
+                    const regex = new RegExp(`\\b${word}\\b`, 'gi');
+                    censoredInput = censoredInput.replace(regex, '****');
+                });
+
+                return censoredInput;
+            }
+
+            const recordButton = document.getElementById("record-button");
+            let recognition; // Variable to store SpeechRecognition instance
+            let isRecording = false; // Recording state
+
+            // Check for browser support
+            if ("webkitSpeechRecognition" in window || "SpeechRecognition" in window) {
+                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                recognition = new SpeechRecognition();
+
+                // Configure SpeechRecognition
+                recognition.lang = currentLanguage; // Set default language (change if needed)
+                recognition.interimResults = false; // Get only the final results
+                recognition.maxAlternatives = 1;
+
+                // Handle recognition result
+                recognition.onresult = function (event) {
+                    const speechResult = event.results[0][0].transcript;
+
+                    // Get the current value of the input field and append the new result
+                    const userInputField = document.getElementById("user-input");
+                    userInputField.value = `${userInputField.value} ${speechResult}`.trim(); // Append and trim extra spaces
+                };
+
+                recognition.onerror = function (event) {
+                    console.error("Speech recognition error:", event.error);
+                };
+
+                recognition.onend = function () {
+                    isRecording = false;
+                    recordButton.textContent = "Record";
+                };
+            } else {
+                alert("Speech recognition is not supported in your browser. Please try a different browser.");
+            }
+
+            // Handle record button click
+            recordButton.addEventListener("click", () => {
+                if (!recognition) return; // Exit if SpeechRecognition is not supported
+
+                if (isRecording) {
+                    recognition.stop(); // Stop recording
+                    isRecording = false;
+                    recordButton.textContent = "Record";
+                } else {
+                    recognition.start(); // Start recording
+                    isRecording = true;
+                    recordButton.textContent = "Stop";
+                }
+            
+            });
+        })
+        
+    </script>
+
+</body>
+
+</html>
