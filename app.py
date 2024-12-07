@@ -7,7 +7,7 @@ import json
 import random
 import sys 
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
-from finetuned_test import predict_emotions, model, tokenizer
+from predict_emotions import predict_emotions, model, tokenizer
 print(f"Running on Python version: {sys.version}")
 app = Flask(__name__)
 
