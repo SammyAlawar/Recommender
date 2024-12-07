@@ -1,120 +1,117 @@
 [
     {
-        "primaryTitle": "Wicked",
+        "title": "Wicked",
+        "startYear": 2024,
+        "id": "tt1262426",
+        "averageRating": 8.1,
+        "description": "Elphaba, a misunderstood young woman because of her green skin, and Glinda, a popular girl, become friends at Shiz University in the Land of Oz. After an encounter with the Wonderful Wizard of Oz, their friendship reaches a crossroads.",
         "genres": [
             "Fantasy",
             "Musical",
             "Romance"
-        ],
-        "startYear": 2024,
-        "id": "tt1262426",
-        "averageRating": 8.1,
-        "description": "In the land of Oz,  ostracized and misunderstood green-skinned Elphaba is forced to share a room with the popular aristocrat Glinda at Shiz University, and the two's unlikely friendship is tested as they begin to fulfill their respective destinies as Glinda the Good and the Wicked Witch of the West."
+        ]
     },
     {
-        "primaryTitle": "Gladiator II",
+        "title": "Gladiator II",
+        "startYear": 2024,
+        "id": "tt9218128",
+        "averageRating": 6.9,
+        "description": "After his home is conquered by the tyrannical emperors who now lead Rome, Lucius is forced to enter the Colosseum and must look to his past to find strength to return the glory of Rome to its people.",
         "genres": [
             "Action",
             "Adventure",
             "Drama"
-        ],
-        "startYear": 2024,
-        "id": "tt9218128",
-        "averageRating": 6.9,
-        "description": "Years after witnessing the death of the revered hero Maximus at the hands of his uncle, Lucius is forced to enter the Colosseum after his home is conquered by the tyrannical Emperors who now lead Rome with an iron fist. With rage in his heart and the future of the Empire at stake, Lucius must look to his past to find strength and honor to return the glory of Rome to its people."
+        ]
     },
     {
-        "primaryTitle": "Moana 2",
+        "title": "Moana 2",
+        "startYear": 2024,
+        "id": "tt13622970",
+        "averageRating": 7.1,
+        "description": "After receiving an unexpected call from her wayfinding ancestors, Moana must journey to the far seas of Oceania and into dangerous, long-lost waters for an adventure unlike anything she's ever faced.",
         "genres": [
             "Adventure",
             "Animation",
             "Comedy"
-        ],
-        "startYear": 2024,
-        "id": "tt13622970",
-        "averageRating": 7.1,
-        "description": "After receiving an unexpected call from her wayfinding ancestors, Moana journeys alongside Maui and a new crew to the far seas of Oceania and into dangerous, long-lost waters for an adventure unlike anything she's ever faced."
+        ]
     },
     {
-        "primaryTitle": "Gladiator",
+        "title": "Gladiator",
+        "startYear": 2000,
+        "id": "tt0172495",
+        "averageRating": 8.5,
+        "description": "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.",
         "genres": [
             "Action",
             "Adventure",
             "Drama"
-        ],
-        "startYear": 2000,
-        "id": "tt0172495",
-        "averageRating": 8.5,
-        "description": "In the year 180, the death of emperor Marcus Aurelius throws the Roman Empire into chaos.  Maximus is one of the Roman army's most capable and trusted generals and a key advisor to the emperor.  As Marcus' devious son Commodus ascends to the throne, Maximus is set to be executed.  He escapes, but is captured by slave traders.  Renamed Spaniard and forced to become a gladiator, Maximus must battle to the death with other men for the amusement of paying audiences."
+        ]
     },
     {
-        "primaryTitle": "The Substance",
-        "genres": [
-            "Drama",
-            "Horror"
-        ],
+        "title": "The Substance",
         "startYear": 2024,
         "id": "tt17526714",
         "averageRating": 7.4,
-        "description": "A fading celebrity decides to use a black market drug, a cell-replicating substance that temporarily creates a younger, better version of herself."
+        "description": "A fading celebrity takes a black-market drug: a cell-replicating substance that temporarily creates a younger, better version of herself.",
+        "genres": [
+            "Drama",
+            "Horror"
+        ]
     },
     {
-        "primaryTitle": "Dear Santa",
+        "title": "Dear Santa",
+        "startYear": 2024,
+        "id": "tt2396431",
+        "averageRating": 5.3,
+        "description": "When a young boy mails his Christmas wish list to Santa with one crucial spelling error, a devilish Jack Black arrives to wreak havoc on the holidays.",
         "genres": [
             "Comedy",
             "Fantasy",
             "Horror"
-        ],
-        "startYear": 2024,
-        "id": "tt2396431",
-        "averageRating": 5.4,
-        "description": "Likeable 6th grader Liam writes to Santa asking him to prove that he's real. But Liam is dyslexic and accidentally sends his letter to Satan instead, who shows up at Liam's house, excited to have his first fanboy letter and wanting a little of Liam's soul."
+        ]
     },
     {
-        "primaryTitle": "Red One",
-        "genres": [
-            "Action",
-            "Adventure",
-            "Comedy"
-        ],
+        "title": "Red One",
         "startYear": 2024,
         "id": "tt14948432",
-        "averageRating": 6.9,
-        "description": "After Santa Claus (codename: Red One) is kidnapped, the North Pole's Head of Security must team up with the world's most infamous bounty hunter in a globe-trotting, action-packed mission to save Christmas."
-    },
-    {
-        "primaryTitle": "Deadpool & Wolverine",
+        "averageRating": 6.8,
+        "description": "After Santa Claus is kidnapped, the North Pole's Head of Security must team up with the world's most infamous bounty hunter in a globe-trotting, action-packed mission to save Christmas.",
         "genres": [
             "Action",
             "Adventure",
             "Comedy"
-        ],
+        ]
+    },
+    {
+        "title": "Deadpool & Wolverine",
         "startYear": 2024,
         "id": "tt6263850",
         "averageRating": 7.7,
-        "description": "A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine."
-    },
-    {
-        "primaryTitle": "How to Train Your Dragon",
+        "description": "Deadpool is offered a place in the Marvel Cinematic Universe by the Time Variance Authority, but instead recruits a variant of Wolverine to save his universe from extinction.",
         "genres": [
             "Action",
             "Adventure",
             "Comedy"
-        ],
+        ]
+    },
+    {
+        "title": "How to Train Your Dragon",
         "startYear": 2025,
         "id": "tt26743210",
         "averageRating": null,
-        "description": "On the rugged isle of Berk, where Vikings and dragons have been bitter enemies for generations, Hiccup stands apart, defying centuries of tradition when he befriends Toothless, a feared Night Fury dragon. Their unlikely bond reveals the true nature of dragons, challenging the very foundations of Viking society."
+        "description": "Follows a young Viking as he aspires to hunt dragons, and how he unexpectedly becomes a friend of a young dragon.",
+        "genres": [
+            "Action",
+            "Adventure",
+            "Comedy"
+        ]
     },
     {
-        "primaryTitle": "Conclave",
-        "genres": [
-            "Drama",
-            "Thriller"
-        ],
+        "title": "Conclave",
         "startYear": 2024,
         "id": "tt20215234",
-        "averageRating": 7.5,
-        "description": "After the unexpected death of the Pope, Cardinal Lawrence is tasked with managing the covert and ancient ritual of electing a new one. Sequestered in the Vatican with the Catholic Church\u2019s most powerful leaders until the process is complete, Lawrence finds himself at the center of a conspiracy that could lead to its downfall."
+        "averageRating": 7.4,
+        "description": "When Cardinal Lawrence is tasked with leading one of the world's most secretive and ancient events, selecting a new Pope, he finds himself at the center of a conspiracy that could shake the very foundation of the Catholic Church.",
+        "genres": null
     }
 ]

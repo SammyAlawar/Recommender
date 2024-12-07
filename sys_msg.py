@@ -4,8 +4,8 @@ with open("static/trending_movies_cache_for_sysmsg.json", "r") as f:
         extracted_movies = json.load(f)
 
 movie_details = "\n".join(
-    f"- {movie['primaryTitle']} ({movie['startYear']}): "
-    f"{', '.join(movie['genres'])}. "
+    f"- {movie['title']} ({movie['startYear']}): "
+    f"{', '.join(movie['genres']) if movie['genres'] else 'No genres available'}. "
     f"Rating: {movie['averageRating']}. "
     f"Description: {movie.get('description') or 'No description available. Improvise based on the title, genre, and rating.'}"
     for movie in extracted_movies

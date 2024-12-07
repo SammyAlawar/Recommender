@@ -21,7 +21,7 @@ def fetch_movie_and_poster(filepath):
     """Fetch movie and poster data, and save it to a JSON file."""
     # Fetch most popular movies
     popular_movies = fetch_most_popular_movies()
-
+    print(popular_movies)
     # Add movie poster URLs and ratings
     for movie in popular_movies:
         movie_id = movie['id']
@@ -39,7 +39,7 @@ def fetch_movie_and_poster(filepath):
 def fetch_most_popular_movies():
     url = "https://imdb236.p.rapidapi.com/imdb/most-popular-movies"
     headers = {
-        "X-RapidAPI-Key": "c972f43f32msh51e91b74431ac9bp1f5267jsn80988ac834d1",  # Replace with your API key
+        "X-RapidAPI-Key": "ebf0759679mshb5e96715312cab9p1ef304jsnf578c471bf36",  
         "X-RapidAPI-Host": "imdb236.p.rapidapi.com"
     }
 
@@ -58,13 +58,13 @@ def fetch_most_popular_movies():
         print("Failed to fetch most popular movies:", response.status_code, response.text)
         return []
     
-def fetch_movie_poster(movie_id):
+def fetch_movie_genres(movie_id):#modified
     # Correct API endpoint for movie details
-    url = f"https://imdb-com.p.rapidapi.com/title/get-taglines?tconst={movie_id}"
+    url = f"https://imdb236.p.rapidapi.com/imdb/{movie_id}"
 
     headers = {
-        "X-RapidAPI-Key": "c972f43f32msh51e91b74431ac9bp1f5267jsn80988ac834d1",
-        "X-RapidAPI-Host": "imdb-com.p.rapidapi.com"
+        "X-RapidAPI-Key": "ebf0759679mshb5e96715312cab9p1ef304jsnf578c471bf36",
+        "X-RapidAPI-Host": "imdb236.p.rapidapi.com"
     }
 
     response = requests.get(url, headers=headers)
@@ -72,35 +72,24 @@ def fetch_movie_poster(movie_id):
     if response.status_code == 200:
         data = response.json()
         # Extract the image URL
-        image_url = data['data']['title']['primaryImage']['url']  
-        return image_url
+        genres = data['genres']  
+        
+        return genres
     else:
         print(f"Failed to fetch poster for {movie_id}:", response.status_code, response.text)
         return None
 
-def fetch_movie_description(movie_id):
-    url = f"https://mdblist.p.rapidapi.com/?i={movie_id}"  # Replace with the actual endpoint
-    headers = {
-        "X-RapidAPI-Key": "c972f43f32msh51e91b74431ac9bp1f5267jsn80988ac834d1",  # Replace with your RapidAPI key
-        "X-RapidAPI-Host": "mdblist.p.rapidapi.com"
-    }
 
-    response = requests.get(url, headers=headers)
-
-    if response.status_code == 200:
-        data = response.json()
-        return data['description']
-        # Extract and return the description
-        
-    else:
-        print(f"Failed to fetch movie details: {response.status_code}")
-        return None
 
 
 
 top_10 = fetch_most_popular_movies()
-extracted_movies = [{key: movie[key] for key in ['primaryTitle', 'genres', 'startYear', 'id', 'averageRating']} for movie in top_10 ]
+save_to_json_file(top_10, 'static/movie_and_poster_cache.json')
+
+print(top_10)
+extracted_movies = [{key: movie[key] for key in ['title', 'startYear', 'id', 'averageRating', 'description']} for movie in top_10 ]
 for movie in extracted_movies:
-    movie['description'] = fetch_movie_description(movie['id'])
+    movie['genres'] = fetch_movie_genres(movie['id'])
     time.sleep(1)
 save_to_json_file(extracted_movies, 'static/trending_movies_cache_for_sysmsg.json')
+

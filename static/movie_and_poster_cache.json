@@ -2,189 +2,141 @@
     {
         "id": "tt1262426",
         "url": "https://www.imdb.com/title/tt1262426/",
-        "primaryTitle": "Wicked",
-        "originalTitle": "Wicked: Part I",
-        "type": "movie",
-        "genres": [
-            "Fantasy",
-            "Musical",
-            "Romance"
-        ],
-        "isAdult": false,
+        "title": "Wicked",
+        "primaryImage": "https://m.media-amazon.com/images/M/MV5BOWMwYjYzYmMtMWQ2Ni00NWUwLTg2MzAtYzkzMDBiZDIwOTMwXkEyXkFqcGc@._V1_.jpg",
+        "description": "Elphaba, a misunderstood young woman because of her green skin, and Glinda, a popular girl, become friends at Shiz University in the Land of Oz. After an encounter with the Wonderful Wizard of Oz, their friendship reaches a crossroads.",
         "startYear": 2024,
         "endYear": null,
         "runtimeMinutes": 160,
-        "averageRating": "8.1\u2b50",
-        "numVotes": 39754,
-        "image": "https://m.media-amazon.com/images/M/MV5BOWMwYjYzYmMtMWQ2Ni00NWUwLTg2MzAtYzkzMDBiZDIwOTMwXkEyXkFqcGc@._V1_.jpg"
+        "contentRating": "PG",
+        "averageRating": 8.1,
+        "numVotes": 45058,
+        "type": "movie"
     },
     {
         "id": "tt9218128",
         "url": "https://www.imdb.com/title/tt9218128/",
-        "primaryTitle": "Gladiator II",
-        "originalTitle": "Gladiator II",
-        "type": "movie",
-        "genres": [
-            "Action",
-            "Adventure",
-            "Drama"
-        ],
-        "isAdult": false,
+        "title": "Gladiator II",
+        "primaryImage": "https://m.media-amazon.com/images/M/MV5BMWYzZTM5ZGQtOGE5My00NmM2LWFlMDEtMGNjYjdmOWM1MzA1XkEyXkFqcGc@._V1_.jpg",
+        "description": "After his home is conquered by the tyrannical emperors who now lead Rome, Lucius is forced to enter the Colosseum and must look to his past to find strength to return the glory of Rome to its people.",
         "startYear": 2024,
         "endYear": null,
         "runtimeMinutes": 148,
-        "averageRating": "6.9\u2b50",
-        "numVotes": 85105,
-        "image": "https://m.media-amazon.com/images/M/MV5BMWYzZTM5ZGQtOGE5My00NmM2LWFlMDEtMGNjYjdmOWM1MzA1XkEyXkFqcGc@._V1_.jpg"
+        "contentRating": "R",
+        "averageRating": 6.9,
+        "numVotes": 90548,
+        "type": "movie"
     },
     {
         "id": "tt13622970",
         "url": "https://www.imdb.com/title/tt13622970/",
-        "primaryTitle": "Moana 2",
-        "originalTitle": "Moana 2",
-        "type": "movie",
-        "genres": [
-            "Adventure",
-            "Animation",
-            "Comedy"
-        ],
-        "isAdult": false,
+        "title": "Moana 2",
+        "primaryImage": "https://m.media-amazon.com/images/M/MV5BZDUxNThhYTUtYjgxNy00MGQ4LTgzOTEtZjg1YTU5NTcwNThlXkEyXkFqcGc@._V1_.jpg",
+        "description": "After receiving an unexpected call from her wayfinding ancestors, Moana must journey to the far seas of Oceania and into dangerous, long-lost waters for an adventure unlike anything she's ever faced.",
         "startYear": 2024,
         "endYear": null,
         "runtimeMinutes": 100,
-        "averageRating": "7.1\u2b50",
-        "numVotes": 16358,
-        "image": "https://m.media-amazon.com/images/M/MV5BZDUxNThhYTUtYjgxNy00MGQ4LTgzOTEtZjg1YTU5NTcwNThlXkEyXkFqcGc@._V1_.jpg"
+        "contentRating": "PG",
+        "averageRating": 7.1,
+        "numVotes": 22785,
+        "type": "movie"
     },
     {
         "id": "tt0172495",
         "url": "https://www.imdb.com/title/tt0172495/",
-        "primaryTitle": "Gladiator",
-        "originalTitle": "Gladiator",
-        "type": "movie",
-        "genres": [
-            "Action",
-            "Adventure",
-            "Drama"
-        ],
-        "isAdult": false,
+        "title": "Gladiator",
+        "primaryImage": "https://m.media-amazon.com/images/M/MV5BYWQ4YmNjYjEtOWE1Zi00Y2U4LWI4NTAtMTU0MjkxNWQ1ZmJiXkEyXkFqcGc@._V1_.jpg",
+        "description": "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.",
         "startYear": 2000,
         "endYear": null,
         "runtimeMinutes": 155,
-        "averageRating": "8.5\u2b50",
-        "numVotes": 1693015,
-        "image": "https://m.media-amazon.com/images/M/MV5BYWQ4YmNjYjEtOWE1Zi00Y2U4LWI4NTAtMTU0MjkxNWQ1ZmJiXkEyXkFqcGc@._V1_.jpg"
+        "contentRating": "R",
+        "averageRating": 8.5,
+        "numVotes": 1694733,
+        "type": "movie"
     },
     {
         "id": "tt17526714",
         "url": "https://www.imdb.com/title/tt17526714/",
-        "primaryTitle": "The Substance",
-        "originalTitle": "The Substance",
-        "type": "movie",
-        "genres": [
-            "Drama",
-            "Horror"
-        ],
-        "isAdult": false,
+        "title": "The Substance",
+        "primaryImage": "https://m.media-amazon.com/images/M/MV5BZDQ1NGE5MGMtYzdlZC00ODExLWJlMDMtNWU4NjA5OWYwMDEwXkEyXkFqcGc@._V1_.jpg",
+        "description": "A fading celebrity takes a black-market drug: a cell-replicating substance that temporarily creates a younger, better version of herself.",
         "startYear": 2024,
         "endYear": null,
         "runtimeMinutes": 141,
-        "averageRating": "7.4\u2b50",
-        "numVotes": 151448,
-        "image": "https://m.media-amazon.com/images/M/MV5BZDQ1NGE5MGMtYzdlZC00ODExLWJlMDMtNWU4NjA5OWYwMDEwXkEyXkFqcGc@._V1_.jpg"
+        "contentRating": "R",
+        "averageRating": 7.4,
+        "numVotes": 154032,
+        "type": "movie"
     },
     {
         "id": "tt2396431",
         "url": "https://www.imdb.com/title/tt2396431/",
-        "primaryTitle": "Dear Santa",
-        "originalTitle": "Dear Santa",
-        "type": "movie",
-        "genres": [
-            "Comedy",
-            "Fantasy",
-            "Horror"
-        ],
-        "isAdult": false,
+        "title": "Dear Santa",
+        "primaryImage": "https://m.media-amazon.com/images/M/MV5BMDNjMzcxNTEtODRjYi00MGQ4LWE3YjAtNjllYzE1OThmZmRhXkEyXkFqcGc@._V1_.jpg",
+        "description": "When a young boy mails his Christmas wish list to Santa with one crucial spelling error, a devilish Jack Black arrives to wreak havoc on the holidays.",
         "startYear": 2024,
         "endYear": null,
         "runtimeMinutes": 107,
-        "averageRating": "5.4\u2b50",
-        "numVotes": 3664,
-        "image": "https://m.media-amazon.com/images/M/MV5BMDNjMzcxNTEtODRjYi00MGQ4LWE3YjAtNjllYzE1OThmZmRhXkEyXkFqcGc@._V1_.jpg"
+        "contentRating": "PG-13",
+        "averageRating": 5.3,
+        "numVotes": 4878,
+        "type": "movie"
     },
     {
         "id": "tt14948432",
         "url": "https://www.imdb.com/title/tt14948432/",
-        "primaryTitle": "Red One",
-        "originalTitle": "Red One",
-        "type": "movie",
-        "genres": [
-            "Action",
-            "Adventure",
-            "Comedy"
-        ],
-        "isAdult": false,
+        "title": "Red One",
+        "primaryImage": "https://m.media-amazon.com/images/M/MV5BZmFkMjE4NjQtZTVmZS00MDZjLWE2ZmEtZTkzODljNjhlNWUxXkEyXkFqcGc@._V1_.jpg",
+        "description": "After Santa Claus is kidnapped, the North Pole's Head of Security must team up with the world's most infamous bounty hunter in a globe-trotting, action-packed mission to save Christmas.",
         "startYear": 2024,
         "endYear": null,
         "runtimeMinutes": 123,
-        "averageRating": "6.9\u2b50",
-        "numVotes": 36772,
-        "image": "https://m.media-amazon.com/images/M/MV5BZmFkMjE4NjQtZTVmZS00MDZjLWE2ZmEtZTkzODljNjhlNWUxXkEyXkFqcGc@._V1_.jpg"
+        "contentRating": "PG-13",
+        "averageRating": 6.8,
+        "numVotes": 37822,
+        "type": "movie"
     },
     {
         "id": "tt6263850",
         "url": "https://www.imdb.com/title/tt6263850/",
-        "primaryTitle": "Deadpool & Wolverine",
-        "originalTitle": "Deadpool & Wolverine",
-        "type": "movie",
-        "genres": [
-            "Action",
-            "Adventure",
-            "Comedy"
-        ],
-        "isAdult": false,
+        "title": "Deadpool & Wolverine",
+        "primaryImage": "https://m.media-amazon.com/images/M/MV5BZTk5ODY0MmQtMzA3Ni00NGY1LThiYzItZThiNjFiNDM4MTM3XkEyXkFqcGc@._V1_.jpg",
+        "description": "Deadpool is offered a place in the Marvel Cinematic Universe by the Time Variance Authority, but instead recruits a variant of Wolverine to save his universe from extinction.",
         "startYear": 2024,
         "endYear": null,
         "runtimeMinutes": 128,
-        "averageRating": "7.7\u2b50",
-        "numVotes": 402812,
-        "image": "https://m.media-amazon.com/images/M/MV5BZTk5ODY0MmQtMzA3Ni00NGY1LThiYzItZThiNjFiNDM4MTM3XkEyXkFqcGc@._V1_.jpg"
+        "contentRating": "R",
+        "averageRating": 7.7,
+        "numVotes": 405882,
+        "type": "movie"
     },
     {
         "id": "tt26743210",
         "url": "https://www.imdb.com/title/tt26743210/",
-        "primaryTitle": "How to Train Your Dragon",
-        "originalTitle": "How to Train Your Dragon",
-        "type": "movie",
-        "genres": [
-            "Action",
-            "Adventure",
-            "Comedy"
-        ],
-        "isAdult": false,
+        "title": "How to Train Your Dragon",
+        "primaryImage": "https://m.media-amazon.com/images/M/MV5BOGU0ZWYzZmUtZDM5Yi00NjJlLTllNTctY2NiZWVkOTIzM2JlXkEyXkFqcGc@._V1_.jpg",
+        "description": "Follows a young Viking as he aspires to hunt dragons, and how he unexpectedly becomes a friend of a young dragon.",
         "startYear": 2025,
         "endYear": null,
         "runtimeMinutes": null,
-        "averageRating": "N/A \u2b50",
+        "contentRating": null,
+        "averageRating": null,
         "numVotes": null,
-        "image": "https://m.media-amazon.com/images/M/MV5BOGU0ZWYzZmUtZDM5Yi00NjJlLTllNTctY2NiZWVkOTIzM2JlXkEyXkFqcGc@._V1_.jpg"
+        "type": "movie"
     },
     {
         "id": "tt20215234",
         "url": "https://www.imdb.com/title/tt20215234/",
-        "primaryTitle": "Conclave",
-        "originalTitle": "Conclave",
-        "type": "movie",
-        "genres": [
-            "Drama",
-            "Thriller"
-        ],
-        "isAdult": false,
+        "title": "Conclave",
+        "primaryImage": "https://m.media-amazon.com/images/M/MV5BYjgxMDI5NmMtNTU3OS00ZDQxLTgxZmEtNzY1ZTBmMDY4NDRkXkEyXkFqcGc@._V1_.jpg",
+        "description": "When Cardinal Lawrence is tasked with leading one of the world's most secretive and ancient events, selecting a new Pope, he finds himself at the center of a conspiracy that could shake the very foundation of the Catholic Church.",
         "startYear": 2024,
         "endYear": null,
         "runtimeMinutes": 120,
-        "averageRating": "7.5\u2b50",
-        "numVotes": 20306,
-        "image": "https://m.media-amazon.com/images/M/MV5BYjgxMDI5NmMtNTU3OS00ZDQxLTgxZmEtNzY1ZTBmMDY4NDRkXkEyXkFqcGc@._V1_.jpg"
+        "contentRating": "PG",
+        "averageRating": 7.4,
+        "numVotes": 23112,
+        "type": "movie"
     }
 ]
