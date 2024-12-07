@@ -5,6 +5,7 @@ from pathlib import Path
 import sys_msg
 import json
 import random
+import sys 
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 from finetuned_test import predict_emotions, model, tokenizer
 print(f"Running on Python version: {sys.version}")
