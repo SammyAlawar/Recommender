@@ -169,5 +169,329 @@
         "description": "A banker convicted of uxoricide forms a friendship over a quarter century with a hardened convict, while maintaining his innocence and trying to remain hopeful through simple compassion.",
         "genres": ["Drama"],
         "poster": "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZWFmLWIwZTAtYzVjZGE3ZTIzODNlXkEyXkFqcGdeQXVyNDY2MjcyOTQ@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt4154756",
+        "primaryTitle": "Avengers: Infinity War",
+        "year": 2018,
+        "rating": "8.4",
+        "description": "The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.",
+        "genres": ["Action", "Adventure", "Sci-Fi"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTc5OTgxMjEwOF5BMl5BanBnXkFtZTgwNTY0OTk4NTM@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt4633694",
+        "primaryTitle": "Spider-Man: Into the Spider-Verse",
+        "year": 2018,
+        "rating": "8.4",
+        "description": "Teen Miles Morales becomes the Spider-Man of his universe and must join with five spider-powered individuals from other dimensions to stop a threat for all realities.",
+        "genres": ["Animation", "Action", "Adventure"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjQzMzU2MjY2NF5BMl5BanBnXkFtZTgwNzY2MjQxNjM@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0073195",
+        "primaryTitle": "Jaws",
+        "year": 1975,
+        "rating": "8.1",
+        "description": "When a massive killer shark unleashes chaos on a beach community off Long Island, it's up to a local sheriff, a marine biologist, and an old seafarer to hunt the beast down.",
+        "genres": ["Adventure", "Thriller"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTg4NjQ3NzI0NF5BMl5BanBnXkFtZTgwNjk1MzU2MTE@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0081505",
+        "primaryTitle": "The Shining",
+        "year": 1980,
+        "rating": "8.4",
+        "description": "A family heads to an isolated hotel for the winter where a sinister presence influences the father into violence, while his psychic son sees horrific forebodings from both past and future.",
+        "genres": ["Drama", "Horror"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BZTcxYjZmYTQtMTNiMC00YmVmLTg4YjgtNzVkNzg1NjE0MDRhXkEyXkFqcGdeQXVyNDY2MjcyOTQ@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0114709",
+        "primaryTitle": "Toy Story",
+        "year": 1995,
+        "rating": "8.3",
+        "description": "A cowboy doll is profoundly threatened and jealous when a new spaceman figure supplants him as top toy in a boy's room.",
+        "genres": ["Animation", "Adventure", "Comedy"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjIwNzYwNzMyMF5BMl5BanBnXkFtZTgwODMwNTM2NDE@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0057565",
+        "primaryTitle": "High and Low",
+        "year": 1963,
+        "rating": "8.4",
+        "description": "An executive of a shoe company becomes a victim of extortion when his chauffeur's son is kidnapped and held for ransom.",
+        "genres": ["Crime", "Drama", "Mystery"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BNTEwZWIyN2QtN2MwOC00Yjk2LTljMjEtYTc5ZTAxYzdkNGNjXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt7286456",
+        "primaryTitle": "Joker",
+        "year": 2019,
+        "rating": "8.4",
+        "description": "In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime.",
+        "genres": ["Crime", "Drama", "Thriller"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BYmM1YTg4NDItZmQwOC00MGQ0LTk4OTktMDVjMjFmZmE2NGEyXkEyXkFqcGdeQXVyNTAzNzgwNTg@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt1049413",
+        "primaryTitle": "Up",
+        "year": 2009,
+        "rating": "8.3",
+        "description": "78-year-old Carl Fredricksen travels to Paradise Falls in his house equipped with balloons, inadvertently taking a young stowaway.",
+        "genres": ["Animation", "Adventure", "Comedy"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BNzA5OTU3NTU5Nl5BMl5BanBnXkFtZTcwOTAxODI1Mg@@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt15398776",
+        "primaryTitle": "Oppenheimer",
+        "year": 2023,
+        "rating": "8.3",
+        "description": "The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.",
+        "genres": ["Biography", "Drama", "History"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BZjRmMmE1MDgtMWFiZi00YWE1LTk4ZTItYmU0ODc4MjBlMGFiXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0993846",
+        "primaryTitle": "The Wolf of Wall Street",
+        "year": 2013,
+        "rating": "8.2",
+        "description": "Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.",
+        "genres": ["Biography", "Comedy", "Crime"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTM4OGE3N2UtZDAyNS00NjJhLTljZGItZTZjNzMzZDM5MmJmXkEyXkFqcGdeQXVyNDgyODgxNjE@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0332280",
+        "primaryTitle": "The Notebook",
+        "year": 2004,
+        "rating": "7.8",
+        "description": "An elderly man reads to a woman with dementia the story of two young lovers whose romance is threatened by the difference in their respective social classes.",
+        "genres": ["Drama", "Romance"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BZmEyZDM4ZGEtMjNjZC00ZDhiLTk2ZTItZDFmYjQ5YzZmMDA3XkEyXkFqcGdeQXVyNDY2MTk5MzI@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt1570728",
+        "primaryTitle": "Crazy, Stupid, Love.",
+        "year": 2011,
+        "rating": "7.4",
+        "description": "A middle-aged husband's life changes dramatically when his wife asks him for a divorce. He seeks to rediscover his manhood with the help of a newfound friend, Jacob, learning to pick up girls at bars.",
+        "genres": ["Comedy", "Drama", "Romance"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjE1NjA2NTQ1Ml5BMl5BanBnXkFtZTcwMDI0NTk0NQ@@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt1022603",
+        "primaryTitle": "(500) Days of Summer",
+        "year": 2009,
+        "rating": "7.7",
+        "description": "After being dumped by the girl he believes to be his soulmate, hopeless romantic Tom Hansen reflects on their relationship to try and figure out where things went wrong and how he can win her back.",
+        "genres": ["Comedy", "Drama", "Romance"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BZGQxMmQzOWQtYTM5Ni00MzNlLWE4MDUtOTdmNmQ3NTA5ZjFmXkEyXkFqcGdeQXVyNTQwMTU4NjM@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0314331",
+        "primaryTitle": "Love Actually",
+        "year": 2003,
+        "rating": "7.6",
+        "description": "Follows the lives of eight very different couples in dealing with their love lives in various loosely interrelated tales all set during a frantic month before Christmas in London, England.",
+        "genres": ["Comedy", "Drama", "Romance"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTk3NjgzNTYxOV5BMl5BanBnXkFtZTcwMDExMzgwNA@@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0101414",
+        "primaryTitle": "Beauty and the Beast",
+        "year": 1991,
+        "rating": "8.0",
+        "description": "A prince cursed to spend his days as a hideous monster sets out to regain his humanity by earning a young woman's love.",
+        "genres": ["Animation", "Family", "Fantasy"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjA2MDE3NzIzNl5BMl5BanBnXkFtZTcwMDQxOTM0NA@@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0103639",
+        "primaryTitle": "Aladdin",
+        "year": 1992,
+        "rating": "8.0",
+        "description": "A kind-hearted street urchin and a power-hungry Grand Vizier vie for a magic lamp that has the power to make their deepest wishes come true.",
+        "genres": ["Animation", "Adventure", "Comedy"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BZmYwYjRjZjQtMzYxMC00ODgxLTk5ZTktYzBjMGJlZjI0ZDczXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt1396484",
+        "primaryTitle": "It",
+        "year": 2017,
+        "rating": "7.3",
+        "description": "In the summer of 1989, a group of bullied kids band together to destroy a shape-shifting monster, which disguises itself as a clown and preys on the children of Derry, their small Maine town.",
+        "genres": ["Horror", "Thriller"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjI3ODk0Mjg3NF5BMl5BanBnXkFtZTgwODUwNDU2MjI@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt8772262",
+        "primaryTitle": "Midsommar",
+        "year": 2019,
+        "rating": "7.1",
+        "description": "A couple travels to Northern Europe to visit a rural hometown's fabled Swedish mid-summer festival. What begins as an idyllic retreat quickly devolves into an increasingly violent and bizarre competition at the hands of a pagan cult.",
+        "genres": ["Drama", "Horror", "Mystery"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BYzJlMzNhMGYtMTBkMC00NGVkLTg2MWMtNDdkNmJmNDNhZjc3XkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0117571",
+        "primaryTitle": "Scream",
+        "year": 1996,
+        "rating": "7.4",
+        "description": "A year after the murder of her mother, a teenage girl is terrorized by a masked killer who targets her and her friends by using scary movies as part of a deadly game.",
+        "genres": ["Horror", "Mystery"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjQ3ODk0NDQzNl5BMl5BanBnXkFtZTgwNDE5ODQxMzE@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt5052448",
+        "primaryTitle": "Get Out",
+        "year": 2017,
+        "rating": "7.8",
+        "description": "A young African-American visits his white girlfriend's parents for the weekend, where his simmering uneasiness about their reception of him eventually reaches a boiling point.",
+        "genres": ["Horror", "Mystery", "Thriller"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BNjIzMDMzNTAtNzFhOS00YmY4LWJlZmUtNzBhOGMwYmE2ZTY1XkEyXkFqcGdeQXVyNjUxMjc1OTM@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt1282140",
+        "primaryTitle": "Easy A",
+        "year": 2010,
+        "rating": "7.0",
+        "description": "When Olive lies to her best friend about losing her virginity to one of the college boys, a girl overhears their conversation. Soon, her story spreads across the entire school like wildfire.",
+        "genres": ["Comedy", "Drama", "Romance"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTkxNDMxMzM5Ml5BMl5BanBnXkFtZTcwNTY0ODQwMw@@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt10648342",
+        "primaryTitle": "Thor: Love and Thunder",
+        "year": 2022,
+        "rating": "6.2",
+        "description": "Thor enlists the help of Valkyrie, Korg and ex-girlfriend Jane Foster to fight Gorr the God Butcher, who intends to make the gods extinct.",
+        "genres": ["Action", "Adventure", "Comedy"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BYTNiZjI3NTItZjI5YS00M2RjLWIwNzEtNmM5ZTNhNmU3ODdlXkEyXkFqcGdeQXVyNDUxNjc5NjY@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt2582846",
+        "primaryTitle": "The Fault in Our Stars",
+        "year": 2014,
+        "rating": "7.7",
+        "description": "Hazel and Gus are teenagers who meet at a cancer support group and fall in love. They both share the same acerbic wit and a love of books, especially 'An Imperial Affliction', so they embark on a journey to visit an author in Amsterdam.",
+        "genres": ["Drama", "Romance"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTczODc1NDM3Ml5BMl5BanBnXkFtZTgwMzQ0MjI3MTE@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt1587310",
+        "primaryTitle": "Maleficent",
+        "year": 2014,
+        "rating": "6.9",
+        "description": "A vengeful fairy is driven to curse an infant princess, only to discover that the child could be the one person who can restore peace to their troubled land.",
+        "genres": ["Adventure", "Family", "Fantasy"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTU0NzM2NjE1OV5BMl5BanBnXkFtZTgwMzIxNjMzMjE@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0147800",
+        "primaryTitle": "10 Things I Hate About You",
+        "year": 1999,
+        "rating": "7.3",
+        "description": "A high-school boy, Cameron, cannot date Bianca until her anti-social older sister, Kat, has a boyfriend. So, Cameron pays a mysterious boy, Patrick, to charm Kat.",
+        "genres": ["Comedy", "Drama", "Romance"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTk5NDU1NDc4OF5BMl5BanBnXkFtZTcwOTAwNDgxMQ@@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt1632708",
+        "primaryTitle": "Friends with Benefits",
+        "year": 2011,
+        "rating": "6.5",
+        "description": "A young man and woman decide to take their friendship to the next level without becoming a couple, but soon discover that adding sex only leads to complications.",
+        "genres": ["Comedy", "Romance"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTkwNDI4MTcxNV5BMl5BanBnXkFtZTcwMzUwODQyNQ@@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt2194499",
+        "primaryTitle": "About Time",
+        "year": 2013,
+        "rating": "7.8",
+        "description": "At the age of 21, Tim discovers he can travel in time and change what happens and has happened in his own life. His decision to make his world a better place by getting a girlfriend turns out not to be as easy as you might think.",
+        "genres": ["Comedy", "Drama", "Fantasy"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjA5MzkwOTYyNV5BMl5BanBnXkFtZTgwMzQxNzY1MDE@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt4225622",
+        "primaryTitle": "The Babysitter",
+        "year": 2017,
+        "rating": "6.4",
+        "description": "When Cole stays up past his bedtime, he discovers that his hot babysitter belongs to a satanic cult that will stop at nothing to keep him quiet.",
+        "genres": ["Comedy", "Horror"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjIyMDAxMzQ3MF5BMl5BanBnXkFtZTgwOTY2NDY4MzI@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt5308322",
+        "primaryTitle": "Happy Death Day",
+        "year": 2017,
+        "rating": "6.6",
+        "description": "A college student must relive the day of her murder over and over again, in a loop that will end only when she discovers her killer's identity.",
+        "genres": ["Comedy", "Horror", "Mystery"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BYzM2ZGE3MDItNmRhZS00NGUwLTg5YzktMzE3NTM1NDRkOWVkXkEyXkFqcGdeQXVyNTI5NjIyMw@@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt1051906",
+        "primaryTitle": "Goosebumps",
+        "year": 2015,
+        "rating": "6.3",
+        "description": "A teenager teams up with the daughter of young-adult horror author R.L. Stine after the writer's imaginary demons are set free on the town of Madison, Delaware.",
+        "genres": ["Adventure", "Comedy", "Fantasy"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjAwMzg4Mzk3Ml5BMl5BanBnXkFtZTgwMzE1ODU5NjE@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt1392170",
+        "primaryTitle": "The Hunger Games",
+        "year": 2012,
+        "rating": "7.2",
+        "description": "Katniss Everdeen voluntarily takes her younger sister's place in the Hunger Games: a televised competition in which two teenagers from each of the twelve Districts of Panem are chosen at random to fight to the death.",
+        "genres": ["Action", "Adventure", "Sci-Fi"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMTk3NTYyNTg4Nl5BMl5BanBnXkFtZTcwMjkzNTgxNw@@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt6751668",
+        "primaryTitle": "Parasite",
+        "year": 2019,
+        "rating": "8.5",
+        "description": "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
+        "genres": ["Comedy", "Drama", "Thriller"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BYWZjNzZlNDktZmNlMC00NTk5LTllYTgtOTMwNDAyZGMzMGFmXkEyXkFqcGdeQXVyNTkzNDQ4ODc@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt0095016",
+        "primaryTitle": "Die Hard",
+        "year": 1988,
+        "rating": "8.2",
+        "description": "A New York City police officer tries to save his estranged wife and several others taken hostage by terrorists during a Christmas party at the Nakatomi Plaza in Los Angeles.",
+        "genres": ["Action", "Thriller"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjExNDQ4NzAzOF5BMl5BanBnXkFtZTgwNDkzMjM1MTE@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt5052448",
+        "primaryTitle": "Get Out",
+        "year": 2017,
+        "rating": "7.8",
+        "description": "A young African-American visits his white girlfriend's parents for the weekend, where his simmering uneasiness about their reception of him eventually reaches a boiling point.",
+        "genres": ["Horror", "Mystery", "Thriller"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjMyMjEwNDI2MF5BMl5BanBnXkFtZTgwNzYxNzYzMTI@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt1670345",
+        "primaryTitle": "Now You See Me",
+        "year": 2013,
+        "rating": "7.2",
+        "description": "An FBI agent and an Interpol detective track a team of illusionists who pull off bank heists during their performances, and reward their audiences with the money.",
+        "genres": ["Crime", "Mystery", "Thriller"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjE0OTQxMTk4OF5BMl5BanBnXkFtZTcwMDU5MzY0OQ@@._V1_SX300.jpg"
+    },
+    {
+        "id": "tt4972582",
+        "primaryTitle": "Split",
+        "year": 2016,
+        "rating": "7.3",
+        "description": "Three girls are kidnapped by a man with a diagnosed 23 distinct personalities. They must try to escape before the apparent emergence of a frightful new 24th.",
+        "genres": ["Horror", "Thriller"],
+        "poster": "https://m.media-amazon.com/images/M/MV5BMjMxNjk3MjgzNl5BMl5BanBnXkFtZTgwODk2Nzg2MTI@._V1_SX300.jpg"
     }
 ]

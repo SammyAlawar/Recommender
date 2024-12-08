@@ -1,60 +1,166 @@
-<div id="quiz-container">
-    <h1>Movie Quiz</h1>
-    <div id="movie-details">
-        <img id="movie-poster" src="{{ movie['poster'] }}" alt="Movie Poster">
-        <h3 id="movie-title">{{ movie['primaryTitle'] }}</h3>
-        <p id="movie-description">{{ movie['description'] }}</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Quiz</title>
+    <style>
+         body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('https://hcdevilsadvocate.com/wp-content/uploads/2019/01/netflix-background-9-900x506.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        /* Container styling */
+        #quiz-container {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Title styling */
+        h1 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        #movie-title {
+            color: #555;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        #movie-description {
+            color: #777;
+            font-size: 1em;
+        }
+
+        /* Button styling */
+        .button-red {
+            background-color: #ff414d;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+       
+
+        .button-yellow {
+            background-color: #ffb400;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #result-box {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #result-box p {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        
+
+        .button-blue {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-blue:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="quiz-container">
+        <h1>Movie Quiz</h1>
+        <div id="movie-details">
+            <h3 id="movie-title">{{ movie['primaryTitle'] }}</h3>
+            <p id="movie-description">{{ movie['description'] }}</p>
+        </div>
+        <div id="quiz-controls" style="margin-top: 20px;">
+            <button id="like-button" class="button-red">Like</button>
+            <button id="dislike-button" class="button-yellow">Dislike</button>
+        </div>
     </div>
-    <div id="quiz-controls">
-        <button id="like-button">Like</button>
-        <button id="dislike-button">Dislike</button>
+    <div id="result-box">
+        <button id="back-to-chat-button" class="button-blue">Back to Chat</button>
     </div>
-</div>
-<div id="result-box" style="display: none; text-align: center;">
-    <!-- The result message will be dynamically inserted here -->
-    <button id="back-to-chat-button" style="margin-top: 20px; padding: 10px 20px; font-size: 16px; border: none; background-color: #007BFF; color: white; border-radius: 5px; cursor: pointer;">
-        Back to Chat
-    </button>
-</div>
-<script>
-    let currentIndex = {{ index }};
-    const movieDetails = document.getElementById("movie-details");
-    const quizControls = document.getElementById("quiz-controls");
-    const resultBox = document.getElementById("result-box");
-    const backToChatButton = document.getElementById("back-to-chat-button");
+    <script>
+        let currentIndex = {{ index }};
+        const movieDetails = document.getElementById("movie-details");
+        const quizControls = document.getElementById("quiz-controls");
+        const resultBox = document.getElementById("result-box");
+        const backToChatButton = document.getElementById("back-to-chat-button");
 
-    // Redirect the user back to the home page when the button is clicked
-    backToChatButton.onclick = () => {
-        window.location.href = "/";
-    };
+        backToChatButton.onclick = () => {
+            window.location.href = "/";
+        };
 
-    document.getElementById("like-button").onclick = () => sendResponse(true);
-    document.getElementById("dislike-button").onclick = () => sendResponse(false);
+        document.getElementById("like-button").onclick = () => sendResponse(true);
+        document.getElementById("dislike-button").onclick = () => sendResponse(false);
 
-    function sendResponse(liked) {
-        fetch("/quiz/response", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ liked, index: currentIndex }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.finished) {
-                // Hide quiz and show the result box
-                movieDetails.style.display = "none";
-                quizControls.style.display = "none";
-                resultBox.style.display = "block";
-                resultBox.insertAdjacentHTML("afterbegin", `<p>${data.result_box}</p>`);
-            } else {
-                // Update the movie details
-                const { movie, index } = data;
-                currentIndex = index;
-                document.getElementById("movie-title").innerText = movie.primaryTitle;
-                document.getElementById("movie-poster").src = movie.poster;
-                document.getElementById("movie-description").innerText = movie.description;
-            }
-        });
-    }
-</script>
+        function sendResponse(liked) {
+            fetch("/quiz/response", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ liked, index: currentIndex }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.finished) {
+                    movieDetails.style.display = "none";
+                    quizControls.style.display = "none";
+                    resultBox.style.display = "block";
+                    resultBox.insertAdjacentHTML("afterbegin", `<p>${data.result_box}</p>`);
+                } else {
+                    const { movie, index } = data;
+                    currentIndex = index;
+                    document.getElementById("movie-title").innerText = movie.primaryTitle;
+                    document.getElementById("movie-description").innerText = movie.description;
+                }
+            });
+        }
+    </script>
+</body>
+</html>
