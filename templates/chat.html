@@ -288,7 +288,7 @@
 <body>
     <!-- Chatbot -->
     <div class="chat-container">
-        <h1>🍿 Entertainment Recommender 🍿</h1>
+        <h1>🍿 Movie Recommender 🍿</h1>
         <!-- Language Buttons -->
         <!-- Language Buttons -->
         <div class="language-buttons">
@@ -324,12 +324,12 @@
 
     <!-- Trending Movies -->
     <div class="movie-list-container">
-        <h3>Top Trending Movies</h3>
+        <h3>Top 10 Trending Movies</h3>
         {% for movie in popular_movies %}
         <div class="movie">
-            <img src="{{ movie.image }}" alt="Movie Thumbnail">
+            <img src="{{ movie.primaryImage }}" alt="Movie Thumbnail">
             <a href="{{ movie.url }}" target="_blank">
-                <span>{{ movie['primaryTitle'] }} ({{movie.startYear}})</span><br>
+                <span>{{ movie['title'] }} {{'⭐'}} ({{movie.startYear}})</span><br>
                 <span>{{ movie['averageRating'] }}</span>
             </a>
         </div>

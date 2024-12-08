@@ -82,7 +82,7 @@ def validate_history(history):
 
 from flask import session
 
-def chat_with_bot(user_input, chat_history, system_message):
+def chat_with_bot(user_input, chat_history, system_message, predicted_emotions):
     """
     Generates a chatbot response based on user input and updates the conversation history.
     Args:
@@ -94,21 +94,20 @@ def chat_with_bot(user_input, chat_history, system_message):
     """
     # Maintain a separate history for OpenAI API
     api_history = [{"role": "system", "content": system_message}]
+    
+    # Add conversation history
     for entry in chat_history:
         if "user" in entry:
             api_history.append({"role": "user", "content": entry["user"]})
         if "bot" in entry:
             api_history.append({"role": "assistant", "content": entry["bot"]})
 
+    # Append the new user input, including emotions
+    enriched_user_input = f"{user_input} (Predicted emotions: {', '.join(predicted_emotions)})"
+    api_history.append({"role": "user", "content": enriched_user_input})
 
-    # Append the new user input to the API history
-    api_history.append({"role": "user", "content": user_input})
-
-    # Debugging the history structure before API call
+    # Debugging the API history
     print("API History:", api_history)
-
-    # Validate the API history
-    validate_history(api_history)
 
     # Generate a response from the assistant
     response = client.chat.completions.create(
@@ -118,11 +117,12 @@ def chat_with_bot(user_input, chat_history, system_message):
     )
     assistant_reply = response.choices[0].message.content
 
-    # Append the user and bot messages to the frontend chat history
+    # Append user and bot messages to chat history
     chat_history.append({
         "user": user_input,
         "bot": assistant_reply,
-        "audio": None  # Placeholder for audio file, added later
+        "emotions": predicted_emotions,  # Save emotions for debugging/frontend
+        "audio": None  # Placeholder for TTS, if applicable
     })
 
     return assistant_reply, chat_history
