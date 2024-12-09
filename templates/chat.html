@@ -288,7 +288,7 @@
 <body>
     <!-- Chatbot -->
     <div class="chat-container">
-        <h1>🍿 Movie Recommender 🍿</h1>
+        <h1>🍿 Cinem.AI 🍿</h1>
         <!-- Language Buttons -->
         <!-- Language Buttons -->
         <div class="language-buttons">
@@ -329,8 +329,8 @@
         <div class="movie">
             <img src="{{ movie.primaryImage }}" alt="Movie Thumbnail">
             <a href="{{ movie.url }}" target="_blank">
-                <span>{{ movie['title'] }} {{'⭐'}} ({{movie.startYear}})</span><br>
-                <span>{{ movie['averageRating'] }}</span>
+                <span>{{ movie['title'] }} ({{movie.startYear}})</span><br>
+                <span>{{ movie['averageRating'] }} {{'⭐'}}</span>
             </a>
         </div>
         {% endfor %}
@@ -366,6 +366,57 @@
 
         });
 
+        const recordButton = document.getElementById("record-button");
+            let recognition = true; // Variable to store SpeechRecognition instance
+            let isRecording = false; // Recording state
+
+            // Check for browser support
+            if ("webkitSpeechRecognition" in window || "SpeechRecognition" in window) {
+                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                recognition = new SpeechRecognition();
+
+                // Configure SpeechRecognition
+                recognition.lang = currentLanguage; // Set default language (change if needed)
+                recognition.interimResults = false; // Get only the final results
+                recognition.maxAlternatives = 1;
+
+                // Handle recognition result
+                recognition.onresult = function (event) {
+                    const speechResult = event.results[0][0].transcript;
+
+                    // Get the current value of the input field and append the new result
+                    const userInputField = document.getElementById("user-input");
+                    userInputField.value = `${userInputField.value} ${speechResult}`.trim(); // Append and trim extra spaces
+                };
+
+                recognition.onerror = function (event) {
+                    console.error("Speech recognition error:", event.error);
+                };
+
+                recognition.onend = function () {
+                    isRecording = false;
+                    recordButton.textContent = "Record";
+                };
+            } else {
+                alert("Speech recognition is not supported in your browser. Please try a different browser.");
+            }
+
+            // Handle record button click
+            recordButton.addEventListener("click", () => {
+                if (!recognition) return; // Exit if SpeechRecognition is not supported
+
+                if (isRecording) {
+                    recognition.stop(); // Stop recording
+                    isRecording = false;
+                    recordButton.textContent = "Record";
+                } else {
+                    recognition.start(); // Start recording
+                    isRecording = true;
+                    recordButton.textContent = "Stop";
+                }
+            
+            });
+
         // Handle form submission and chat interactions
         const form = document.getElementById("chat-form");
         const chatHistory = document.getElementById("chat-history");
@@ -373,7 +424,7 @@
 
         form.addEventListener("submit", function (event) {
             event.preventDefault();
-
+            
             const userInput = document.getElementById("user-input").value;
             const selectedLanguage = languageEnButton.classList.contains("active") ? "en" : "ar";
 
@@ -445,56 +496,7 @@
                 return censoredInput;
             }
 
-            const recordButton = document.getElementById("record-button");
-            let recognition; // Variable to store SpeechRecognition instance
-            let isRecording = false; // Recording state
-
-            // Check for browser support
-            if ("webkitSpeechRecognition" in window || "SpeechRecognition" in window) {
-                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-                recognition = new SpeechRecognition();
-
-                // Configure SpeechRecognition
-                recognition.lang = currentLanguage; // Set default language (change if needed)
-                recognition.interimResults = false; // Get only the final results
-                recognition.maxAlternatives = 1;
-
-                // Handle recognition result
-                recognition.onresult = function (event) {
-                    const speechResult = event.results[0][0].transcript;
-
-                    // Get the current value of the input field and append the new result
-                    const userInputField = document.getElementById("user-input");
-                    userInputField.value = `${userInputField.value} ${speechResult}`.trim(); // Append and trim extra spaces
-                };
-
-                recognition.onerror = function (event) {
-                    console.error("Speech recognition error:", event.error);
-                };
-
-                recognition.onend = function () {
-                    isRecording = false;
-                    recordButton.textContent = "Record";
-                };
-            } else {
-                alert("Speech recognition is not supported in your browser. Please try a different browser.");
-            }
-
-            // Handle record button click
-            recordButton.addEventListener("click", () => {
-                if (!recognition) return; // Exit if SpeechRecognition is not supported
-
-                if (isRecording) {
-                    recognition.stop(); // Stop recording
-                    isRecording = false;
-                    recordButton.textContent = "Record";
-                } else {
-                    recognition.start(); // Start recording
-                    isRecording = true;
-                    recordButton.textContent = "Stop";
-                }
             
-            });
         })
         
     </script>
