@@ -24,7 +24,7 @@ Cinema AI is a chatbot designed to recommend movies based on user emotions and p
 5. *Multilingual Support*
    - Supports both English and Arabic for diverse user needs.
 
-6. *Inappropriate words censering*
+6. *Inappropriate words censoring*
    - Ensures a respectful user experience using a filtering system.
 ---
 
